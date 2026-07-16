@@ -1,0 +1,14 @@
+import "dotenv/config";
+const address = /^0x[0-9a-fA-F]{40}$/; const stacksContract = /^(SP|ST)[A-Z0-9]{38,41}\.[a-zA-Z][a-zA-Z0-9-]{0,39}$/;
+const celo = process.env.NEXT_PUBLIC_CELO_NETWORK || "celo"; const stacks = process.env.NEXT_PUBLIC_STACKS_NETWORK || "mainnet";
+if (!new Set(["celo", "celoSepolia"]).has(celo)) throw new Error("NEXT_PUBLIC_CELO_NETWORK must be celo or celoSepolia.");
+if (!new Set(["mainnet", "testnet"]).has(stacks)) throw new Error("NEXT_PUBLIC_STACKS_NETWORK must be mainnet or testnet.");
+for (const key of ["NEXT_PUBLIC_HANDOFF_CELO_CONTRACT_ADDRESS", "NEXT_PUBLIC_HANDOFF_CELO_USDT_ADDRESS"]) if (process.env[key] && !address.test(process.env[key])) throw new Error(`${key} must be an EVM address.`);
+if (process.env.NEXT_PUBLIC_HANDOFF_STACKS_CONTRACT_ADDRESS && !/^(SP|ST)[A-Z0-9]{38,41}$/.test(process.env.NEXT_PUBLIC_HANDOFF_STACKS_CONTRACT_ADDRESS)) throw new Error("NEXT_PUBLIC_HANDOFF_STACKS_CONTRACT_ADDRESS is invalid.");
+if (process.env.NEXT_PUBLIC_HANDOFF_STACKS_CONTRACT_NAME && !/^[a-zA-Z][a-zA-Z0-9-]{0,39}$/.test(process.env.NEXT_PUBLIC_HANDOFF_STACKS_CONTRACT_NAME)) throw new Error("NEXT_PUBLIC_HANDOFF_STACKS_CONTRACT_NAME is invalid.");
+for (const key of ["HANDOFF_STACKS_CONTRACT_ID_MAINNET", "HANDOFF_STACKS_CONTRACT_ID_TESTNET"]) if (process.env[key] && !stacksContract.test(process.env[key])) throw new Error(`${key} is invalid.`);
+if (process.env.STACKS_DEPLOY_FEE_MICROSTX && (!/^\d+$/.test(process.env.STACKS_DEPLOY_FEE_MICROSTX) || BigInt(process.env.STACKS_DEPLOY_FEE_MICROSTX) <= 0n)) throw new Error("STACKS_DEPLOY_FEE_MICROSTX must be positive.");
+const official = { celo: "0x48065fbbe25f71c9282ddf5e1cd6d6a887483d5e", celoSepolia: "0xd077A400968890Eacc75cdc901F0356c943e4fDb", mainnet: "SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-token", testnet: "ST1F7QA2MDF17S807EPA36TSS8AMEFY4KA9TVGWXT.sbtc-token" };
+if (process.env.NEXT_PUBLIC_HANDOFF_CELO_USDT_ADDRESS && process.env.NEXT_PUBLIC_HANDOFF_CELO_USDT_ADDRESS.toLowerCase() !== official[celo].toLowerCase()) throw new Error("Configured USDT does not match the selected Celo network.");
+if (process.env.NEXT_PUBLIC_STACKS_SBTC_CONTRACT_ID && process.env.NEXT_PUBLIC_STACKS_SBTC_CONTRACT_ID !== official[stacks]) throw new Error("Configured sBTC does not match the selected Stacks network.");
+console.log("Environment values are internally consistent. Token identifiers must still be revalidated against official registries before deployment.");

@@ -1,0 +1,4 @@
+import hre from "hardhat";
+import { serverEnv } from "../lib/server-env";
+async function main() { const selected = hre.globalOptions.network; if (!new Set(["celo", "celoSepolia"]).has(selected)) throw new Error("Verification is restricted to Celo networks."); const address = selected === "celo" ? serverEnv.celoMainnetAddress : serverEnv.celoSepoliaAddress; const token = selected === "celo" ? serverEnv.celoMainnetUsdt : serverEnv.celoSepoliaUsdt; if (!/^0x[0-9a-fA-F]{40}$/.test(address)) throw new Error("Missing the matching deployed Handoff address."); const runner = hre as unknown as { run(task: string, args: Record<string, unknown>): Promise<unknown> }; await runner.run("verify:verify", { address, constructorArguments: [token] }); console.log("Verified HandoffEscrow", address, "with USDT", token); }
+main().catch((error) => { console.error(error instanceof Error ? error.message : error); process.exitCode = 1; });

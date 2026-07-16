@@ -1,0 +1,10 @@
+import { describe, expect, it } from "vitest";
+import { approvalSteps } from "@/lib/repositories/celo";
+import { friendlyContractError } from "@/lib/repositories/errors";
+import { exactSbtcPostConditions, stacksParsing } from "@/lib/repositories/stacks";
+describe("repository invariants",()=>{
+  it("resets stale nonzero Celo allowance before exact approval",()=>{expect(approvalSteps(0n,5n)).toEqual(["approval","action"]);expect(approvalSteps(5n,5n)).toEqual(["action"]);expect(approvalSteps(9n,5n)).toEqual(["reset-approval","approval","action"]);});
+  it("builds exactly one equal-amount sBTC post-condition",async()=>{const conditions=await exactSbtcPostConditions("SP3QRTP6DSWDNEMPTHPKH01ZT3VAT950X2KCJ3BCB",42000n);expect(conditions).toHaveLength(1);expect(conditions[0]).toBeTruthy();});
+  it("normalizes Solidity, Clarity and wallet errors",()=>{expect(friendlyContractError(new Error("InvalidSecret()"))).toHaveProperty("message",expect.stringMatching(/does not match/));expect(friendlyContractError(new Error("(err u409)"))).toHaveProperty("message",expect.stringMatching(/5 minutes/));expect(friendlyContractError(new Error("User rejected"))).toHaveProperty("message",expect.stringMatching(/rejected/));});
+  it("parses Clarity deal tuples",()=>{const tuple={type:"response_ok",value:{type:"tuple",value:{seller:{type:"principal_standard",value:"SPSELLER"},buyer:{type:"optional_some",value:{type:"principal_standard",value:"SPBUYER"}},"intended-buyer":{type:"optional_none",value:null},"deal-ref":{type:"buffer",value:`0x${"11".repeat(32)}`},"terms-hash":{type:"buffer",value:`0x${"22".repeat(32)}`},"release-commitment":{type:"buffer",value:`0x${"33".repeat(32)}`},amount:{type:"uint",value:"500"},"created-at":{type:"uint",value:"10"},"expires-at":{type:"uint",value:"100"},"funded-at":{type:"uint",value:"20"},"resolved-at":{type:"uint",value:"0"},status:{type:"uint",value:"1"},resolution:{type:"uint",value:"0"}}}};const deal=stacksParsing.mapStacksDeal(tuple,7n);expect(deal).toMatchObject({id:7n,buyer:"SPBUYER",amount:500n,status:"funded"});});
+});

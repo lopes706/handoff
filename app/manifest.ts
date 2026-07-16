@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next";
+export default function manifest(): MetadataRoute.Manifest { return { name: "Handoff", short_name: "Handoff", description: "Buyer-controlled in-person escrow on Celo and Stacks.", start_url: "/app", display: "standalone", background_color: "#F2E9D8", theme_color: "#F2E9D8", icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" }] }; }

@@ -1,0 +1,64 @@
+# Handoff
+
+Handoff is buyer-controlled, backendless escrow for a small in-person exchange. A seller creates an unlisted label, a buyer locks up to 50 USDT on Celo or 50,000 sats on Stacks, and the buyer releases only after inspecting the item. The buyer can confirm in their wallet or show the seller a one-time release pass.
+
+This repository is code-ready, unaudited, undeployed, and not yet a Talent submission. It performs no shipping, dispute resolution, arbitration, trust scoring, account recovery, custody outside funded deals, or support override.
+
+## Lifecycle
+
+`Open → Funded → Completed` for a successful handoff. A seller may move a funded deal to `Refunded` at any time; at expiry anyone may trigger that same return to the recorded buyer. An unfunded deal may be `Cancelled`. No terminal deal transitions again.
+
+Human-readable terms never enter a Handoff database: they live in a checksummed URL fragment or `.handoff.json` file, and only their SHA-256 hash is onchain. The fragment is omitted from HTTP requests, but the link remains bearer-readable—not encrypted.
+
+## Stack and structure
+
+- Next.js 16, React 19, TypeScript, Viem, Stacks Connect/Transactions
+- Solidity 0.8.24, Hardhat 3, OpenZeppelin 5
+- Clarity 4, Clarinet SDK, official sBTC requirement/remapping
+- Vitest, Playwright, axe
+- `app/`, `components/`, `lib/repositories/`, `contracts/`, `stacks/contracts/`, `test/`, `ui-tests/`, `e2e/`, `scripts/`, `docs/`
+- ignored `.home/` operator pools, journals, planners, and mainnet QA tooling
+
+The app reads contracts directly through a Celo RPC or Stacks API. It has no application server, database, indexer, analytics SDK, or fabricated live state. A missing contract address produces an explicit setup screen; labelled local UI previews are opt-in.
+
+## Local setup
+
+Use Node 22.13 or newer.
+
+```bash
+npm ci
+cp .env.example .env.local
+npm run dev
+```
+
+Contract addresses are optional for layout and local-preview review, but required for live reads and wallet actions. See [deployment.md](docs/deployment.md) for every variable and the testnet-first workflow.
+
+## Verification
+
+```bash
+npm run lint
+npm run typecheck
+npm run compile:celo
+npm run test:celo
+npm run check:stacks
+npm run test:stacks
+npm run test:ui
+npm run build
+npm run test:e2e
+npm run test:a11y
+npm run verify
+npm run verify:full
+node --test .home/tests/*.test.mjs
+```
+
+Direct token transfers to either escrow contract are unsupported and unrecoverable. Buyer release is irreversible: inspect the item first.
+
+## Specifications
+
+- [Exact deal rules](docs/deal-rules.md)
+- [Contract parity](docs/contract-parity.md)
+- [Brand and interface](docs/brand-ui.md)
+- [Threat model](docs/threat-model.md)
+- [Deployment and verification](docs/deployment.md)
+- [Launch checklist](docs/launch-checklist.md)
+- [Talent readiness](docs/talent-readiness.md)
