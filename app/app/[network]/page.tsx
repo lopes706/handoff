@@ -15,7 +15,7 @@ export default async function DashboardPage({
   const { preview } = await searchParams;
   if (!isNetwork(network)) notFound();
   return (
-    <AppFrame network={network}>
+    <AppFrame network={network} activeNav="manifest">
       <DashboardClient network={network} preview={preview === "1"} />
     </AppFrame>
   );
