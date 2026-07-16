@@ -18,4 +18,13 @@ export const metadata: Metadata = {
     : undefined
 };
 export const viewport: Viewport = { themeColor: "#F2E9D8", colorScheme: "light" };
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body>{children}</body></html>; }
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="en">
+      <body>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
+        {children}
+      </body>
+    </html>
+  );
+}
