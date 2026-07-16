@@ -8,12 +8,13 @@ test("landing explains the route and local preview", async ({ page }) => {
   await page.getByRole("button", { name: /Lock payment/i }).click();
   await expect(page.locator(".status-tape")).toHaveText("funded");
 });
-test("setup mode never substitutes a live manifest", async ({ page }) => {
+test("default mainnet configuration never substitutes a live manifest", async ({ page }) => {
   await page.goto("/app/celo");
   await expect(
-    page.getByRole("heading", { name: "Contract setup required" }),
+    page.getByRole("heading", { name: "Connect to inspect your manifest" }),
   ).toBeVisible();
-  await expect(page.getByText(/never substitute demo deals/i)).toBeVisible();
+  await expect(page.getByText("LOCAL PREVIEW")).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Contract setup required" })).toHaveCount(0);
 });
 test("dashboard preview is visibly local and cannot resemble a live wallet", async ({
   page,
@@ -36,7 +37,7 @@ test("new-deal form exposes exact product controls", async ({ page }) => {
   ).toBeVisible();
   await expect(
     page.getByRole("button", { name: /Create unlisted deal/i }),
-  ).toBeDisabled();
+  ).toBeEnabled();
 });
 test("labelled preview covers fund, buyer pass, seller claim, refund and receipt states", async ({
   page,

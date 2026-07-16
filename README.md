@@ -2,7 +2,7 @@
 
 Handoff is buyer-controlled, backendless escrow for a small in-person exchange. A seller creates an unlisted label, a buyer locks up to 50 USDT on Celo or 50,000 sats on Stacks, and the buyer releases only after inspecting the item. The buyer can confirm in their wallet or show the seller a one-time release pass.
 
-This repository is code-ready, unaudited, undeployed, and not yet a Talent submission. It performs no shipping, dispute resolution, arbitration, trust scoring, account recovery, custody outside funded deals, or support override.
+This repository is code-ready and deployed on Celo and Stacks mainnet, but remains unaudited. It performs no shipping, dispute resolution, arbitration, trust scoring, account recovery, custody outside funded deals, or support override.
 
 ## Lifecycle
 
@@ -31,7 +31,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Contract addresses are optional for layout and local-preview review, but required for live reads and wallet actions. See [deployment.md](docs/deployment.md) for every variable and the testnet-first workflow.
+Verified mainnet identifiers are built-in defaults; environment values can override them for another reviewed deployment. Testnet contract addresses remain required. See [deployment.md](docs/deployment.md) for every variable and the testnet-first workflow.
 
 ## Verification
 
