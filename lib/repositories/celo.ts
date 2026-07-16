@@ -1,4 +1,4 @@
-import { createPublicClient, createWalletClient, custom, defineChain, http, type Address, type EIP1193Provider, type Hex } from "viem";
+import { createPublicClient, createWalletClient, custom, defineChain, http, parseEventLogs, type Address, type EIP1193Provider, type Hex, type TransactionReceipt } from "viem";
 import { erc20Abi, handoffCeloAbi } from "../celo-abi";
 import { contractConfigured, getCeloChainId, getCeloExplorer, getCeloRpc, publicEnv } from "../env";
 import { resolutionByCode, statusByCode } from "../format";
@@ -18,23 +18,38 @@ export function mapCeloDeal(raw: unknown): HandoffDeal {
 function mapActivity(raw: unknown): ActorActivity { const a = values(raw) as bigint[]; return { dealsCreated: a[0], dealsFunded: a[1], completedAsSeller: a[2], completedAsBuyer: a[3], refundedAsBuyer: a[4], refundsIssuedAsSeller: a[5] }; }
 export function approvalSteps(allowance: bigint, exactAmount: bigint): TransactionStep[] { return allowance === exactAmount ? ["action"] : allowance === 0n ? ["approval", "action"] : ["reset-approval", "approval", "action"]; }
 
+export function dealIdFromCreatedLogs(logs: TransactionReceipt["logs"], dealRef: Hex): bigint | undefined {
+  const event = parseEventLogs({ abi: handoffCeloAbi, eventName: "DealCreated", logs, strict: true })
+    .find(({ args }) => args.dealRef.toLowerCase() === dealRef.toLowerCase());
+  return event?.args.dealId;
+}
+
+export async function retryDealId(readDealId: () => Promise<bigint>, attempts = 4, delayMs = 500): Promise<bigint> {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    const dealId = await readDealId();
+    if (dealId) return dealId;
+    if (attempt < attempts - 1 && delayMs > 0) await new Promise((resolve) => setTimeout(resolve, delayMs));
+  }
+  return 0n;
+}
+
 export function createCeloRepository(provider?: InjectedProvider, account = ""): HandoffRepository {
   const address = publicEnv.celoContractAddress as Address;
   const token = publicEnv.celoUsdtAddress as Address;
   const wallet = provider ? createWalletClient({ account: account as Address || undefined, chain: celoChain, transport: custom(provider) }) : null;
   const read = <T>(functionName: string, args: readonly unknown[] = []) => publicClient.readContract({ address, abi: handoffCeloAbi, functionName: functionName as never, args: args as never }) as Promise<T>;
-  const send = async (target: Address, abi: typeof handoffCeloAbi | typeof erc20Abi, functionName: string, args: readonly unknown[], step: TransactionStep, index: number, total: number, observer?: TransactionObserver): Promise<TransactionReceiptSummary> => {
+  const send = async (target: Address, abi: typeof handoffCeloAbi | typeof erc20Abi, functionName: string, args: readonly unknown[], step: TransactionStep, index: number, total: number, observer?: TransactionObserver): Promise<{ summary: TransactionReceiptSummary; receipt: TransactionReceipt }> => {
     if (!wallet || !account) throw new Error("Connect a Celo wallet first.");
     observer?.({ phase: "awaiting-signature", step, stepIndex: index, totalSteps: total, message: step === "reset-approval" ? "Approve clearing the old USDT allowance." : step === "approval" ? "Approve the exact USDT amount." : "Approve the Handoff action." });
     const hash = await wallet.writeContract({ address: target, abi, functionName: functionName as never, args: args as never, account: account as Address, chain: celoChain } as never);
     const explorerUrl = `${getCeloExplorer()}/tx/${hash}`;
     observer?.({ phase: "confirming", step, stepIndex: index, totalSteps: total, message: `Step ${index} of ${total} submitted. Waiting for Celo.`, hash, explorerUrl });
-    await publicClient.waitForTransactionReceipt({ hash });
+    const receipt = await publicClient.waitForTransactionReceipt({ hash });
     observer?.({ phase: "confirmed", step, stepIndex: index, totalSteps: total, message: `Step ${index} of ${total} confirmed.`, hash, explorerUrl });
-    return { hash, explorerUrl, step };
+    return { summary: { hash, explorerUrl, step }, receipt };
   };
   const action = async (name: string, args: readonly unknown[], observer?: TransactionObserver) => {
-    try { return { transactions: [await send(address, handoffCeloAbi, name, args, "action", 1, 1, observer)] }; } catch (error) { throw friendlyContractError(error); }
+    try { return { transactions: [(await send(address, handoffCeloAbi, name, args, "action", 1, 1, observer)).summary] }; } catch (error) { throw friendlyContractError(error); }
   };
   return {
     network: "celo", configured: contractConfigured("celo"), assetSymbol: "USDT", assetDecimals: 6, maxAmount: 50_000_000n,
@@ -45,7 +60,15 @@ export function createCeloRepository(provider?: InjectedProvider, account = ""):
     getCreatedIds: (owner, start, count) => Promise.all(Array.from({ length: count }, (_, i) => read<bigint>("getCreatedId", [owner as Address, start + BigInt(i)]))),
     getFundedIds: (owner, start, count) => Promise.all(Array.from({ length: count }, (_, i) => read<bigint>("getFundedId", [owner as Address, start + BigInt(i)]))),
     getAssetBalance: (owner) => publicClient.readContract({ address: token, abi: erc20Abi, functionName: "balanceOf", args: [owner as Address] }),
-    async createDeal(input, observer) { const result = await action("createDeal", [input.dealRef as Hex, input.termsHash as Hex, input.amount, BigInt(input.expiresAt), (input.intendedBuyer || ZERO) as Address], observer); return { ...result, dealId: await read<bigint>("getDealIdByRef", [input.dealRef as Hex]) }; },
+    async createDeal(input, observer) {
+      try {
+        const dealRef = input.dealRef as Hex;
+        const { summary, receipt } = await send(address, handoffCeloAbi, "createDeal", [dealRef, input.termsHash as Hex, input.amount, BigInt(input.expiresAt), (input.intendedBuyer || ZERO) as Address], "action", 1, 1, observer);
+        const dealId = dealIdFromCreatedLogs(receipt.logs, dealRef)
+          ?? await retryDealId(() => read<bigint>("getDealIdByRef", [dealRef]));
+        return { transactions: [summary], dealId };
+      } catch (error) { throw friendlyContractError(error); }
+    },
     async fundDeal(input, observer) {
       if (!wallet || !account) throw new Error("Connect a Celo wallet first.");
       try {
@@ -56,9 +79,9 @@ export function createCeloRepository(provider?: InjectedProvider, account = ""):
         const deal = await this.getDeal(input.dealId); if (!deal) throw new Error("DealNotFound");
         if (balance < deal.amount) throw new Error("This wallet does not have enough USDT for this deal.");
         const steps = approvalSteps(allowance, deal.amount).length; const transactions: TransactionReceiptSummary[] = []; let index = 1;
-        if (allowance !== 0n && allowance !== deal.amount) transactions.push(await send(token, erc20Abi, "approve", [address, 0n], "reset-approval", index++, steps, observer));
-        if (allowance !== deal.amount) transactions.push(await send(token, erc20Abi, "approve", [address, deal.amount], "approval", index++, steps, observer));
-        transactions.push(await send(address, handoffCeloAbi, "fundDeal", [input.dealId, input.releaseCommitment as Hex], "action", index, steps, observer));
+        if (allowance !== 0n && allowance !== deal.amount) transactions.push((await send(token, erc20Abi, "approve", [address, 0n], "reset-approval", index++, steps, observer)).summary);
+        if (allowance !== deal.amount) transactions.push((await send(token, erc20Abi, "approve", [address, deal.amount], "approval", index++, steps, observer)).summary);
+        transactions.push((await send(address, handoffCeloAbi, "fundDeal", [input.dealId, input.releaseCommitment as Hex], "action", index, steps, observer)).summary);
         return { transactions };
       } catch (error) { throw friendlyContractError(error); }
     },

@@ -14,6 +14,7 @@ const activityComponents = [
 ] as const;
 
 export const handoffCeloAbi = [
+  { type: "event", name: "DealCreated", inputs: [{ name: "dealId", type: "uint256", indexed: true }, { name: "dealRef", type: "bytes32", indexed: true }, { name: "seller", type: "address", indexed: true }, { name: "intendedBuyer", type: "address", indexed: false }, { name: "amount", type: "uint64", indexed: false }, { name: "expiresAt", type: "uint64", indexed: false }, { name: "termsHash", type: "bytes32", indexed: false }] },
   { type: "function", name: "getDeal", stateMutability: "view", inputs: [{ name: "dealId", type: "uint256" }], outputs: [{ name: "", type: "tuple", components: dealComponents }] },
   { type: "function", name: "getDealIdByRef", stateMutability: "view", inputs: [{ name: "dealRef", type: "bytes32" }], outputs: [{ name: "", type: "uint256" }] },
   { type: "function", name: "getActorActivity", stateMutability: "view", inputs: [{ name: "actor", type: "address" }], outputs: [{ name: "", type: "tuple", components: activityComponents }] },
