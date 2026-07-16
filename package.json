@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.13.0"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "next dev --webpack",
@@ -51,6 +51,9 @@
     "react-dom": "^19.2.7",
     "viem": "^2.54.6"
   },
+  "optionalDependencies": {
+    "@rolldown/binding-darwin-x64": "1.1.5"
+  },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
     "@eslint/eslintrc": "^3.3.1",
@@ -59,7 +62,6 @@
     "@nomicfoundation/hardhat-mocha": "^3.0.16",
     "@nomicfoundation/hardhat-verify": "^3.0.14",
     "@playwright/test": "^1.57.0",
-    "@rolldown/binding-darwin-x64": "^1.2.0",
     "@stacks/clarinet-sdk": "^3.21.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
