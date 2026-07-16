@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="logo-title logo-description" xmlns="http://www.w3.org/2000/svg">
+  <title id="logo-title">Handoff square logo</title>
+  <desc id="logo-description">The blue Handoff package-check mark used on the landing page.</desc>
+  <rect width="512" height="512" fill="#F2E9D8"/>
+  <g transform="translate(12 12) rotate(-2 220 220)">
+    <rect x="30" y="30" width="440" height="440" fill="#18201C"/>
+    <rect x="10" y="10" width="420" height="420" fill="#1D4ED8" stroke="#18201C" stroke-width="20"/>
+    <g transform="translate(95 95) scale(10.4166667)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m16 16 2 2 4-4"/>
+      <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"/>
+      <path d="m7.5 4.27 9 5.15"/>
+      <polyline points="3.29 7 12 12 20.71 7"/>
+      <line x1="12" x2="12" y1="22" y2="12"/>
+    </g>
+  </g>
+</svg>
