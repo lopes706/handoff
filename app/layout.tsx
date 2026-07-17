@@ -12,7 +12,20 @@ export const metadata: Metadata = {
   applicationName: "Handoff",
   manifest: "/manifest.webmanifest",
   icons: { icon: "/icon.svg" },
-  openGraph: { title: "Handoff", description: "Lock payment. Inspect in person. Release when it is right.", type: "website" },
+  openGraph: {
+    title: "Handoff",
+    description: "Lock payment. Inspect in person. Release when it is right.",
+    type: "website",
+    url: "/",
+    siteName: "Handoff",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Handoff preview card" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Handoff",
+    description: "Lock payment. Inspect in person. Release when it is right.",
+    images: ["/opengraph-image"]
+  },
   other: publicEnv.talentVerification
     ? { "talentapp:project_verification": publicEnv.talentVerification }
     : undefined
