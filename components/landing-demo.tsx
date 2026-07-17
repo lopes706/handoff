@@ -9,11 +9,12 @@ const steps = [
 ];
 export function LandingDemo() {
   const [active, setActive] = useState(0); const tabRefs = useRef<Array<HTMLButtonElement | null>>([]); const step = steps[active]; const Icon = step.icon;
+  const panelId = "demo-step-panel";
   const focusStep = (index: number) => {
     setActive(index);
     tabRefs.current[index]?.focus();
   };
-  return <div className="parcel hero-visual" aria-label="Local interactive preview"><div className="label"><div className="label-head"><div><span className="eyebrow">Local preview · not live</span><h3 style={{ margin: "5px 0 0" }}>Dispatch #0042</h3></div><span className="status-tape">{active === 0 ? "open" : active === 1 ? "funded" : "released"}</span></div><div className="barcode" aria-hidden="true" /><div aria-labelledby={`demo-step-tab-${active}`} id={`demo-step-panel-${active}`} role="tabpanel" style={{ display: "flex", gap: 14, alignItems: "center", margin: "17px 0" }}><Icon aria-hidden="true" /><div><strong>{step.title}</strong><p className="fineprint" style={{ margin: 0 }}>{step.copy}</p></div></div><div className="demo-steps" aria-label="Deal flow preview steps" role="tablist">{steps.map((item, index) => <button key={item.title} aria-controls={`demo-step-panel-${index}`} aria-selected={index === active} id={`demo-step-tab-${index}`} onClick={() => setActive(index)} onKeyDown={(event) => {
+  return <div className="parcel hero-visual" aria-label="Local interactive preview"><div className="label"><div className="label-head"><div><span className="eyebrow">Local preview · not live</span><h3 style={{ margin: "5px 0 0" }}>Dispatch #0042</h3></div><span className="status-tape">{active === 0 ? "open" : active === 1 ? "funded" : "released"}</span></div><div className="barcode" aria-hidden="true" /><div aria-labelledby={`demo-step-tab-${active}`} id={panelId} role="tabpanel" style={{ display: "flex", gap: 14, alignItems: "center", margin: "17px 0" }}><Icon aria-hidden="true" /><div><strong>{step.title}</strong><p className="fineprint" style={{ margin: 0 }}>{step.copy}</p></div></div><div className="demo-steps" aria-label="Deal flow preview steps" role="tablist">{steps.map((item, index) => <button key={item.title} aria-controls={panelId} aria-selected={index === active} id={`demo-step-tab-${index}`} onClick={() => setActive(index)} onKeyDown={(event) => {
     if (event.key === "ArrowRight") {
       event.preventDefault();
       focusStep((index + 1) % steps.length);
