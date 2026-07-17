@@ -11,7 +11,11 @@ export const metadata: Metadata = {
   description: "Buyer-controlled escrow for in-person exchange on Celo and Stacks.",
   applicationName: "Handoff",
   manifest: "/manifest.webmanifest",
-  icons: { icon: "/icon.svg" },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/apple-icon",
+  },
   openGraph: {
     title: "Handoff",
     description: "Lock payment. Inspect in person. Release when it is right.",
