@@ -187,7 +187,7 @@ export function DashboardClient({
               onClick={() => client.connect()}
               disabled={client.connecting}
             >
-              <Wallet size={18} />{" "}
+              <Wallet aria-hidden="true" size={18} />{" "}
               {client.connecting
                 ? "Connecting…"
                 : network === "celo"
@@ -216,7 +216,7 @@ export function DashboardClient({
       ) : !client.connected && !preview ? (
         <div className="manifest">
           <div className="empty">
-            <PackageOpen size={42} />
+            <PackageOpen aria-hidden="true" size={42} />
             <h3>Connect to inspect your manifest</h3>
             <p>
               Wallet addresses are used only for direct contract reads. There is
@@ -268,7 +268,7 @@ export function DashboardClient({
                         client.repository.assetDecimals,
                         client.repository.assetSymbol,
                       )}{" "}
-                      <ArrowRight size={15} />
+                      <ArrowRight aria-hidden="true" size={15} />
                     </span>
                   </Link>
                 ))

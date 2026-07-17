@@ -124,7 +124,7 @@ export function NewDealClient({ network }: { network: Network }) {
           <span className="wallet-chip">Seller wallet connected</span>
         ) : (
           <button className="button" onClick={() => client.connect()}>
-            <Wallet size={18} /> Connect seller wallet
+            <Wallet aria-hidden="true" size={18} /> Connect seller wallet
           </button>
         )}
       </div>
@@ -253,7 +253,11 @@ export function NewDealClient({ network }: { network: Network }) {
             </div>
           )}
           <div className="privacy-note">
-            <FileLock2 size={20} style={{ float: "left", marginRight: 10 }} />
+            <FileLock2
+              aria-hidden="true"
+              size={20}
+              style={{ float: "left", marginRight: 10 }}
+            />
             <strong>Private by sharing, not encrypted.</strong> The title,
             description and meeting hint travel in the link fragment or exported
             file. Anyone holding either can read them.
@@ -286,7 +290,7 @@ export function NewDealClient({ network }: { network: Network }) {
               "Creating label…"
             ) : (
               <>
-                Create unlisted deal <ArrowRight size={18} />
+                Create unlisted deal <ArrowRight aria-hidden="true" size={18} />
               </>
             )}
           </button>
