@@ -136,7 +136,7 @@ export function NewDealClient({ network }: { network: Network }) {
         <div className="form-body">
           {!client.repository.configured && (
             <div className="warning">
-              <AlertTriangle />
+              <AlertTriangle aria-hidden="true" />
               <span>
                 This build has no live contract configured. The form remains
                 visible for review, but submission is blocked.
@@ -277,7 +277,7 @@ export function NewDealClient({ network }: { network: Network }) {
           )}
           {error && (
             <p role="alert" className="warning">
-              <AlertTriangle />
+              <AlertTriangle aria-hidden="true" />
               {error}
             </p>
           )}

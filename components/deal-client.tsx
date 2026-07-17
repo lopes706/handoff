@@ -465,7 +465,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
     return (
       <main className="app-main">
         <div className="setup">
-          <AlertTriangle />
+          <AlertTriangle aria-hidden="true" />
           <div>
             <h3>Contract setup required</h3>
             <p>
@@ -558,7 +558,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
             )}{" "}
             {sheetError && (
               <div className="warning" role="alert">
-                <ShieldAlert />
+                <ShieldAlert aria-hidden="true" />
                 {sheetError}
               </div>
             )}
@@ -699,7 +699,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
               <span className="eyebrow">Buyer controls release</span>
               <h3>Inspect the item first</h3>
               <div className="warning">
-                <AlertTriangle />
+                <AlertTriangle aria-hidden="true" />
                 Releasing pays the seller immediately and cannot be reversed.
               </div>
               {ticket ? (
