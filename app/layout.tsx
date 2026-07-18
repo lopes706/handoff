@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   description: "Buyer-controlled escrow for in-person exchange on Celo and Stacks.",
   applicationName: "Handoff",
   manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Handoff",
+  },
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
