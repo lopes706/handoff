@@ -1,2 +1,15 @@
 import type { MetadataRoute } from "next";
-export default function sitemap(): MetadataRoute.Sitemap { const base = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"; return [{ path: "", priority: 1 }, { path: "/app", priority: 0.9 }, { path: "/app/celo", priority: 0.7 }, { path: "/app/stacks", priority: 0.7 }].map(({ path, priority }) => ({ url: `${base}${path}`, changeFrequency: "weekly" as const, priority })); }
+import { publicEnv } from "@/lib/env";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return [
+    { path: "", priority: 1 },
+    { path: "/app", priority: 0.9 },
+    { path: "/app/celo", priority: 0.7 },
+    { path: "/app/stacks", priority: 0.7 }
+  ].map(({ path, priority }) => ({
+    url: `${publicEnv.appUrl}${path}`,
+    changeFrequency: "weekly" as const,
+    priority
+  }));
+}
