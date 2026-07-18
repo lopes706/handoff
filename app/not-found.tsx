@@ -11,4 +11,29 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NotFound() { return <main className="invalid-page" id="main-content" tabIndex={-1}><section className="invalid-card"><PackageX aria-hidden="true" size={42} /><span className="eyebrow">Page not found · 404</span><h1>This Handoff page could not be found.</h1><p>This link does not open a valid Handoff screen. Check the shared URL. If a private sheet was included, its fragment may appear after <span className="mono">#sheet=</span>.</p><div className="button-row"><Link className="button primary" href="/app">Open Handoff</Link><Link className="button" href="/">Return home</Link></div></section></main>; }
+export default function NotFound() {
+  return (
+    <main className="invalid-page" id="main-content" tabIndex={-1}>
+      <section className="invalid-card">
+        <PackageX aria-hidden="true" size={42} />
+        <span className="eyebrow">Page not found · 404</span>
+        <h1>This Handoff page could not be found.</h1>
+        <p>
+          This link does not open a valid Handoff screen. Check the shared URL.
+          If the sender included a private sheet, make sure the full link still
+          contains the <span className="mono">#sheet=</span> fragment. That
+          private sheet stays only in the link and is never sent with the page
+          request.
+        </p>
+        <div className="button-row">
+          <Link className="button primary" href="/app">
+            Open Handoff app
+          </Link>
+          <Link className="button" href="/">
+            Return home
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+}
