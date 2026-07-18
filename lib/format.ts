@@ -1,6 +1,7 @@
 import type { DealResolution, DealStatus, HandoffDeal, Network } from "./types";
 
 export const isNetwork = (value: string): value is Network => value === "celo" || value === "stacks";
+export const networkLabel = (network: Network) => network === "celo" ? "Celo" : "Stacks";
 export const statusByCode: DealStatus[] = ["open", "funded", "completed", "refunded", "cancelled"];
 export const resolutionByCode: DealResolution[] = ["none", "buyer-confirmed", "seller-claimed", "seller-refunded", "expired-refund"];
 export const shortAddress = (value: string, take = 5) => value.length > take * 2 + 1 ? `${value.slice(0, take)}…${value.slice(-take)}` : value;

@@ -2,8 +2,14 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { AppFrame } from "@/components/app-frame";
 import { DashboardClient } from "@/components/dashboard-client";
-import { isNetwork } from "@/lib/format";
-export const metadata: Metadata = { title: "Manifest" };
+import { isNetwork, networkLabel } from "@/lib/format";
+
+export async function generateMetadata({ params }: { params: Promise<{ network: string }> }): Promise<Metadata> {
+  const { network } = await params;
+  if (!isNetwork(network)) return { title: "Manifest" };
+  return { title: `${networkLabel(network)} manifest` };
+}
+
 export default async function DashboardPage({
   params,
   searchParams,
