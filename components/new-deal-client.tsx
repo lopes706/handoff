@@ -146,6 +146,7 @@ export function NewDealClient({ network }: { network: Network }) {
           <div className="field">
             <label htmlFor="title">Item or exchange title</label>
             <input
+              aria-describedby="title-hint"
               id="title"
               required
               maxLength={80}
@@ -153,7 +154,7 @@ export function NewDealClient({ network }: { network: Network }) {
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Vintage field camera"
             />
-            <small>
+            <small id="title-hint">
               1–80 characters. Avoid sensitive personal information.
             </small>
           </div>
@@ -162,6 +163,7 @@ export function NewDealClient({ network }: { network: Network }) {
               <label htmlFor="amount">Exact amount</label>
               <div className="amount-input">
                 <input
+                  aria-describedby="amount-hint"
                   id="amount"
                   required
                   inputMode="decimal"
@@ -171,7 +173,7 @@ export function NewDealClient({ network }: { network: Network }) {
                 />
                 <span>{client.repository.assetSymbol}</span>
               </div>
-              <small>
+              <small id="amount-hint">
                 Maximum {max} {client.repository.assetSymbol}
               </small>
             </div>
@@ -198,24 +200,32 @@ export function NewDealClient({ network }: { network: Network }) {
               Description <span className="fineprint">optional</span>
             </label>
             <textarea
+              aria-describedby="description-hint"
               id="description"
               maxLength={280}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Condition, included parts, or what the buyer should inspect."
             />
+            <small id="description-hint">
+              Shared in the link fragment or exported file with the buyer.
+            </small>
           </div>
           <div className="field">
             <label htmlFor="meeting">
               Meeting hint <span className="fineprint">optional</span>
             </label>
             <input
+              aria-describedby="meeting-hint"
               id="meeting"
               maxLength={120}
               value={meetingHint}
               onChange={(e) => setMeetingHint(e.target.value)}
               placeholder="Inside the main station entrance"
             />
+            <small id="meeting-hint">
+              Add a short public clue for where the in-person exchange starts.
+            </small>
           </div>
           <fieldset className="field" style={{ border: 0, padding: 0 }}>
             <legend className="field-label">Buyer access</legend>
@@ -244,12 +254,16 @@ export function NewDealClient({ network }: { network: Network }) {
             <div className="field">
               <label htmlFor="buyer">Buyer address</label>
               <input
+                aria-describedby="buyer-hint"
                 id="buyer"
                 required
                 value={buyer}
                 onChange={(e) => setBuyer(e.target.value)}
                 placeholder={network === "celo" ? "0x…" : "SP… / ST…"}
               />
+              <small id="buyer-hint">
+                Use the wallet address expected to fund and release this deal.
+              </small>
             </div>
           )}
           <div className="privacy-note">
