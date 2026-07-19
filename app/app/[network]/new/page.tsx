@@ -6,10 +6,10 @@ import { isNetwork, networkLabel } from "@/lib/format";
 
 export async function generateMetadata({ params }: { params: Promise<{ network: string }> }): Promise<Metadata> {
   const { network } = await params;
-  if (!isNetwork(network)) return { title: "Create deal label" };
+  if (!isNetwork(network)) return { title: "Create deal sheet" };
   return {
-    title: `Create ${networkLabel(network)} deal label`,
-    description: `Prepare a private Handoff deal label for an in-person exchange on ${networkLabel(network)}.`,
+    title: `Create ${networkLabel(network)} deal sheet`,
+    description: `Prepare a private Handoff deal sheet for an in-person exchange on ${networkLabel(network)}.`,
   };
 }
 

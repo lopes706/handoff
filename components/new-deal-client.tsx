@@ -117,7 +117,7 @@ export function NewDealClient({ network }: { network: Network }) {
           <span className={`tag ${network}`}>
             {network === "celo" ? "Celo · USDT" : "Stacks · sBTC"}
           </span>
-          <h1>Create label</h1>
+          <h1>Create deal sheet</h1>
           <p>One mobile form. One private sheet. One immutable expiry.</p>
         </div>
         {client.connected ? (
@@ -301,7 +301,7 @@ export function NewDealClient({ network }: { network: Network }) {
             disabled={submitting || !client.repository.configured}
           >
             {submitting ? (
-              "Creating label…"
+              "Creating deal sheet…"
             ) : (
               <>
                 Create unlisted deal <ArrowRight aria-hidden="true" size={18} />
