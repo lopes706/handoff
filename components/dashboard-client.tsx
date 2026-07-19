@@ -228,7 +228,7 @@ export function DashboardClient({
         <div className="dashboard-grid">
           <section className="manifest" aria-busy={preview ? false : loading}>
             <div className="manifest-head">
-              <strong>Recent dispatches</strong>
+              <strong>Recent deals</strong>
               <span className="mono">
                 {(preview ? previewDeals(network) : deals).length
                   .toString()
@@ -274,9 +274,9 @@ export function DashboardClient({
                 ))
               ) : (
                 <div className="empty">
-                  <h3>No dispatches yet</h3>
+                  <h3>No deals yet</h3>
                   <p>
-                    Create an unlisted label and share it directly with your
+                    Create an unlisted deal and share it directly with your
                     buyer.
                   </p>
                   <Link className="button primary" href={`/app/${network}/new`}>
