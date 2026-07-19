@@ -6,9 +6,9 @@ import { SiteHeader } from "@/components/site-header";
 describe("site header", () => {
   it("keeps both primary navigation links available", () => {
     render(<SiteHeader />);
-    expect(
-      screen.getByRole("link", { name: /handoff home/i }),
-    ).toHaveAttribute("href", "/");
+    const homeLink = screen.getByRole("link", { name: /handoff home/i });
+    expect(homeLink).toHaveAttribute("href", "/");
+    expect(homeLink).toHaveAttribute("aria-current", "page");
     expect(
       screen.getByRole("link", { name: /how it works/i }),
     ).toHaveAttribute("href", "/#how");
