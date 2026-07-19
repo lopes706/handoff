@@ -476,7 +476,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
               className="button"
               href={`/d/${network}/${id}?preview=funded`}
             >
-              Open labelled local preview
+              Open local deal preview
             </Link>
           </div>
         </div>
@@ -486,7 +486,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
     return (
       <main className="app-main">
         <div className="invalid-card">
-          <h1>Unknown label.</h1>
+          <h1>Unknown deal.</h1>
           <p>
             No deal #{id} was found on the selected {network} contract.
           </p>
@@ -526,7 +526,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
       <div className="deal-layout">
         <section className="deal-label">
           <div className="deal-label-head">
-            <span className="eyebrow">Unlisted handoff label</span>
+            <span className="eyebrow">Unlisted handoff deal</span>
             <span className="status-tape">{status}</span>
           </div>
           <div className="deal-label-body">
@@ -646,7 +646,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
               <span className="eyebrow">Inspection stop / open</span>
               <h3>
                 {isSeller
-                  ? "Share and back up this label"
+                  ? "Share and back up this deal"
                   : "Verify before locking payment"}
               </h3>
               {isSeller ? (

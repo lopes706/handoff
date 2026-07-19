@@ -8,10 +8,10 @@ test("landing explains the route and local preview", async ({ page }) => {
   await page.getByRole("button", { name: /Lock payment/i }).click();
   await expect(page.locator(".status-tape")).toHaveText("funded");
 });
-test("default mainnet configuration never substitutes a live manifest", async ({ page }) => {
+test("default mainnet configuration never substitutes a live deals view", async ({ page }) => {
   await page.goto("/app/celo");
   await expect(
-    page.getByRole("heading", { name: "Connect to inspect your manifest" }),
+    page.getByRole("heading", { name: "Connect to inspect your deals" }),
   ).toBeVisible();
   await expect(page.getByText("LOCAL PREVIEW")).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "Contract setup required" })).toHaveCount(0);
@@ -28,7 +28,7 @@ test("dashboard preview is visibly local and cannot resemble a live wallet", asy
 test("new-deal form exposes exact product controls", async ({ page }) => {
   await page.goto("/app/stacks/new");
   await expect(
-    page.getByRole("heading", { name: "Create label" }),
+    page.getByRole("heading", { name: "Create deal sheet" }),
   ).toBeVisible();
   await expect(page.getByLabel("Exact amount")).toBeVisible();
   await expect(page.getByRole("group", { name: "Expiry" })).toBeVisible();
@@ -76,7 +76,7 @@ test("deal metadata is noindex and invalid routes recover", async ({
   );
   await page.goto("/d/unknown/42");
   await expect(
-    page.getByRole("heading", { name: /Label not found/i }),
+    page.getByRole("heading", { name: /could not be found/i }),
   ).toBeVisible();
 });
 test("mobile layout has no horizontal overflow and touch controls are large", async ({
