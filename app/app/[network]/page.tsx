@@ -6,8 +6,11 @@ import { isNetwork, networkLabel } from "@/lib/format";
 
 export async function generateMetadata({ params }: { params: Promise<{ network: string }> }): Promise<Metadata> {
   const { network } = await params;
-  if (!isNetwork(network)) return { title: "Manifest" };
-  return { title: `${networkLabel(network)} manifest` };
+  if (!isNetwork(network)) return { title: "Open app" };
+  return {
+    title: `${networkLabel(network)} deals`,
+    description: `Review live and expired Handoff deals on ${networkLabel(network)}.`,
+  };
 }
 
 export default async function DashboardPage({
