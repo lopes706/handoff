@@ -22,7 +22,7 @@ test("dashboard preview is visibly local and cannot resemble a live wallet", asy
   await page.goto("/app/celo?preview=1");
   await expect(page.getByText("LOCAL PREVIEW")).toBeVisible();
   await expect(page.getByText("NO LIVE WALLET")).toBeVisible();
-  await expect(page.getByText("Recent dispatches")).toBeVisible();
+  await expect(page.getByText("Recent deals")).toBeVisible();
   await expect(page.locator('a[href*="preview=funded"]')).toBeVisible();
 });
 test("new-deal form exposes exact product controls", async ({ page }) => {
@@ -39,7 +39,7 @@ test("new-deal form exposes exact product controls", async ({ page }) => {
     page.getByRole("button", { name: /Create unlisted deal/i }),
   ).toBeEnabled();
 });
-test("labelled preview covers fund, buyer pass, seller claim, refund and receipt states", async ({
+test("local preview covers fund, buyer pass, seller claim, refund and receipt states", async ({
   page,
 }) => {
   await page.goto("/d/celo/42?preview=open");

@@ -209,7 +209,7 @@ export function DashboardClient({
               substitute demo deals for live contract state.
             </p>
             <Link className="button" href={`/d/${network}/42?preview=funded`}>
-              Open labelled UI preview
+              Open local UI preview
             </Link>
           </div>
         </div>
