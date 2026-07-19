@@ -141,7 +141,7 @@ export function DashboardClient({
             setError(
               reason instanceof Error
                 ? reason.message
-                : "Could not load the manifest.",
+                : "Could not load your deals.",
             ),
         )
         .finally(() => !cancelled && setLoading(false));
@@ -159,10 +159,10 @@ export function DashboardClient({
           <span className={`tag ${network}`}>
             {network === "celo" ? "Celo · USDT" : "Stacks · sBTC"}
           </span>
-          <h1>Your manifest</h1>
+          <h1>Your deals</h1>
           <p>
             {preview
-              ? "Labelled sample manifest for interface inspection only."
+              ? "Labelled sample deals for interface inspection only."
               : "Created and funded deals read directly from the contract."}
           </p>
         </div>
@@ -217,7 +217,7 @@ export function DashboardClient({
         <div className="manifest">
           <div className="empty">
             <PackageOpen aria-hidden="true" size={42} />
-            <h3>Connect to inspect your manifest</h3>
+            <h3>Connect to inspect your deals</h3>
             <p>
               Wallet addresses are used only for direct contract reads. There is
               no account database.
