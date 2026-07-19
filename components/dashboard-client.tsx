@@ -162,7 +162,7 @@ export function DashboardClient({
           <h1>Your deals</h1>
           <p>
             {preview
-              ? "Labelled sample deals for interface inspection only."
+              ? "Local sample deals for interface inspection only."
               : "Created and funded deals read directly from the contract."}
           </p>
         </div>
