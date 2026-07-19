@@ -8,7 +8,7 @@ This repository is code-ready and deployed on Celo and Stacks mainnet, but remai
 
 `Open → Funded → Completed` for a successful handoff. In user-facing copy, that terminal success is described as the buyer releasing the handoff after inspection or the seller claiming with the one-time secret. A seller may move a funded deal to `Refunded` at any time; at expiry anyone may trigger that same return to the recorded buyer. An unfunded deal may be `Cancelled`. No terminal deal transitions again.
 
-Human-readable terms never enter a Handoff database: they live in a checksummed URL fragment or `.handoff.json` file, and only their SHA-256 hash is onchain. The fragment is omitted from HTTP requests, but the link remains bearer-readable—not encrypted.
+Human-readable terms never enter a Handoff database: they live in a checksummed URL fragment or `.handoff.json` file, and only their SHA-256 hash is onchain. The fragment is omitted from HTTP requests, but the deal sheet link remains bearer-readable, not encrypted.
 
 ## Stack and structure
 
