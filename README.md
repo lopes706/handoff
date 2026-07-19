@@ -1,6 +1,6 @@
 # Handoff
 
-Handoff is buyer-controlled, backendless escrow for a small in-person exchange. A seller creates an unlisted label, a buyer locks up to 50 USDT on Celo or 50,000 sats on Stacks, and the buyer releases only after inspecting the item. The buyer can confirm in their wallet or show the seller a one-time release pass.
+Handoff is buyer-controlled, backendless escrow for a small in-person exchange. A seller creates an unlisted deal sheet, a buyer locks up to 50 USDT on Celo or 50,000 sats on Stacks, and the buyer releases only after inspecting the item. The buyer can confirm in their wallet or show the seller a one-time release pass.
 
 This repository is code-ready and deployed on Celo and Stacks mainnet, but remains unaudited. It performs no shipping, dispute resolution, arbitration, trust scoring, account recovery, custody outside funded deals, or support override.
 
@@ -19,7 +19,7 @@ Human-readable terms never enter a Handoff database: they live in a checksummed 
 - `app/`, `components/`, `lib/repositories/`, `contracts/`, `stacks/contracts/`, `test/`, `ui-tests/`, `e2e/`, `scripts/`, `docs/`
 - ignored `.home/` operator pools, journals, planners, and mainnet QA tooling
 
-The app reads contracts directly through a Celo RPC or Stacks API. It has no application server, database, indexer, analytics SDK, or fabricated live state. A missing contract address produces an explicit setup screen; labelled local UI previews are opt-in.
+The app reads contracts directly through a Celo RPC or Stacks API. It has no application server, database, indexer, analytics SDK, or fabricated live state. A missing contract address produces an explicit setup screen; local UI previews are opt-in and clearly marked.
 
 ## Local setup
 
