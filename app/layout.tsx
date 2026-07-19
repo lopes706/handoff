@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(publicEnv.appUrl),
   title: { default: "Handoff — inspect, exchange, release", template: "%s · Handoff" },
   description: "Buyer-controlled escrow for in-person exchange on Celo and Stacks.",
+  keywords: [
+    "in-person escrow",
+    "local exchange escrow",
+    "Celo USDT escrow",
+    "Stacks sBTC escrow",
+    "buyer-controlled escrow",
+  ],
   applicationName: "Handoff",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
