@@ -491,7 +491,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
             No deal #{id} was found on the selected {network} contract.
           </p>
           <Link className="button primary" href={`/app/${network}`}>
-            Return to manifest
+            Return to deals
           </Link>
         </div>
       </main>
