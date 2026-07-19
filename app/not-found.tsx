@@ -20,10 +20,10 @@ export default function NotFound() {
         <h1>This Handoff page could not be found.</h1>
         <p>
           This link does not open a valid Handoff screen. Check the shared URL.
-          If the sender included a private sheet, make sure the full link still
-          contains the <span className="mono">#sheet=</span> fragment. That
-          private sheet stays only in the link and is never sent with the page
-          request.
+          If the sender included a private deal sheet, make sure the full link
+          still contains the <span className="mono">#sheet=</span> fragment.
+          That private deal sheet stays only in the link and is never sent with
+          the page request.
         </p>
         <div className="button-row">
           <Link className="button primary" href="/app">
