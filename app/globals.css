@@ -295,7 +295,26 @@ h3 {
   grid-template-columns: 34px 1fr;
   gap: 12px;
   padding: 14px 0;
+  width: 100%;
+  background: transparent;
+  color: inherit;
+  align-items: center;
+  transition:
+    background-color 120ms ease,
+    padding-inline 120ms ease;
   border-bottom: 1px dashed var(--muted);
+}
+.demo-step:hover,
+.demo-step:focus-visible {
+  background: #f4c95d33;
+  padding-inline: 10px;
+}
+.demo-step[data-state="current"] {
+  background: #f4c95d55;
+  padding-inline: 10px;
+}
+.demo-step[data-state="complete"] b {
+  background: var(--green);
 }
 .demo-step:last-child {
   border: 0;
