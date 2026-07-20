@@ -281,7 +281,12 @@ export function NewDealClient({ network }: { network: Network }) {
             file. Anyone holding either can read them.
           </div>
           {transaction && (
-            <div className="transaction-box" role="status">
+            <div
+              className="transaction-box"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               <strong>{transaction.message}</strong>
               {transaction.hash && (
                 <span
@@ -294,7 +299,7 @@ export function NewDealClient({ network }: { network: Network }) {
             </div>
           )}
           {error && (
-            <p role="alert" className="warning">
+            <p role="alert" aria-atomic="true" className="warning">
               <AlertTriangle aria-hidden="true" />
               {error}
             </p>

@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { NewDealClient } from "@/components/new-deal-client";
 import type { HandoffRepository } from "@/lib/types";
@@ -15,20 +15,25 @@ const repository = {
   maxAmount: 50_000_000n,
 } as Partial<HandoffRepository>;
 
+let mockConnected = false;
+const mockConnect = vi.fn();
+const mockDisconnect = vi.fn();
+
 vi.mock("@/components/network-client", () => ({
   useNetworkClient: () => ({
     account: "",
-    connected: false,
+    connected: mockConnected,
     connecting: false,
     isMiniPay: false,
     repository,
-    connect: vi.fn(),
-    disconnect: vi.fn(),
+    connect: mockConnect,
+    disconnect: mockDisconnect,
   }),
 }));
 
 describe("new deal form accessibility copy", () => {
   it("links field guidance to the matching inputs", () => {
+    mockConnected = false;
     render(<NewDealClient network="celo" />);
 
     expect(screen.getByLabelText(/item or exchange title/i)).toHaveAttribute(
@@ -66,5 +71,43 @@ describe("new deal form accessibility copy", () => {
       "id",
       "meeting-hint",
     );
+  });
+
+  it("announces transaction progress and errors as atomic updates", async () => {
+    mockConnected = true;
+    repository.createDeal = vi
+      .fn()
+      .mockImplementation(async (_deal, setTransaction) => {
+        setTransaction({
+          message: "Confirm in wallet",
+          hash: "0x1234",
+        });
+        throw new Error("Wallet declined the request.");
+      });
+
+    render(<NewDealClient network="celo" />);
+
+    fireEvent.change(screen.getByLabelText(/item or exchange title/i), {
+      target: { value: "Vintage field camera" },
+    });
+    fireEvent.change(screen.getByLabelText(/exact amount/i), {
+      target: { value: "12.50" },
+    });
+    fireEvent.click(
+      screen.getByRole("button", { name: /create unlisted deal/i }),
+    );
+
+    const status = await screen.findByRole("status");
+    expect(status).toHaveAttribute("aria-live", "polite");
+    expect(status).toHaveAttribute("aria-atomic", "true");
+    expect(screen.getByText(/confirm in wallet/i)).toBeInTheDocument();
+
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveAttribute("aria-atomic", "true");
+    expect(alert).toHaveTextContent(/wallet declined the request/i);
+
+    await waitFor(() => {
+      expect(repository.createDeal).toHaveBeenCalled();
+    });
   });
 });
