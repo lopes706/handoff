@@ -114,6 +114,9 @@ h3 {
   font-weight: 750;
 }
 .site-nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration: underline;
   text-decoration-color: transparent;
   text-decoration-thickness: 0.16em;
