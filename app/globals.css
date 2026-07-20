@@ -206,7 +206,8 @@ h3 {
   gap: 9px;
   border-radius: var(--radius);
 }
-.button:hover {
+.button:hover,
+.button:focus-visible {
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0 var(--ink);
 }
