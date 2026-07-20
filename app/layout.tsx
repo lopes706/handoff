@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(publicEnv.appUrl),
   title: { default: "Handoff — inspect, exchange, release", template: "%s · Handoff" },
-  description: "Buyer-controlled escrow for in-person exchange on Celo and Stacks.",
+  description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
   keywords: [
     "in-person escrow",
     "local exchange escrow",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Handoff",
-    description: "Lock payment. Inspect in person. Release when it is right.",
+    description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
     type: "website",
     url: "/",
     siteName: "Handoff",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Handoff",
-    description: "Lock payment. Inspect in person. Release when it is right.",
+    description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
     images: ["/opengraph-image"]
   },
   other: publicEnv.talentVerification
