@@ -257,6 +257,10 @@ export function NewDealClient({ network }: { network: Network }) {
                 aria-describedby="buyer-hint"
                 id="buyer"
                 required
+                autoCapitalize="off"
+                autoComplete="off"
+                autoCorrect="off"
+                spellCheck={false}
                 value={buyer}
                 onChange={(e) => setBuyer(e.target.value)}
                 placeholder={network === "celo" ? "0x…" : "SP… / ST…"}
