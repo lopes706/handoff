@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(publicEnv.appUrl),
   title: { default: "Handoff — inspect, exchange, release", template: "%s · Handoff" },
   description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
+  formatDetection: {
+    telephone: false,
+    date: false,
+    address: false,
+    email: false,
+  },
   keywords: [
     "in-person escrow",
     "local exchange escrow",
