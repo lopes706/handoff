@@ -511,7 +511,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
           <span className={`tag ${network}`}>
             {network === "celo" ? "Celo · USDT" : "Stacks · sBTC"}
           </span>
-          <h1>Dispatch #{id.padStart(4, "0")}</h1>
+          <h1>Deal #{id.padStart(4, "0")}</h1>
         </div>
         <div className="wallet-line">
           {client.connected ? (
