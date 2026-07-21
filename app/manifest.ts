@@ -17,17 +17,17 @@ export default function manifest(): MetadataRoute.Manifest {
     icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" }],
     shortcuts: [
       {
-        name: "Open Celo lane",
-        short_name: "Celo",
-        description: "Start a Handoff deal on Celo with USDT.",
-        url: "/app/celo",
+        name: "New Celo handoff",
+        short_name: "New Celo",
+        description: "Open the new-deal form for a Celo handoff with USDT.",
+        url: "/app/celo/new",
         icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml" }]
       },
       {
-        name: "Open Stacks lane",
-        short_name: "Stacks",
-        description: "Start a Handoff deal on Stacks with sBTC.",
-        url: "/app/stacks",
+        name: "New Stacks handoff",
+        short_name: "New Stacks",
+        description: "Open the new-deal form for a Stacks handoff with sBTC.",
+        url: "/app/stacks/new",
         icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml" }]
       }
     ]
