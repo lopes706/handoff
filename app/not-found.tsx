@@ -26,7 +26,7 @@ export default function NotFound() {
           sheet stays only in the link and is never sent with the page request.
         </p>
         <div className="button-row">
-          <Link className="button primary" href="/app">
+          <Link className="button primary" href="/app/celo">
             Open Handoff app
           </Link>
           <Link className="button" href="/">

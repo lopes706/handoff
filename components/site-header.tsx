@@ -9,7 +9,7 @@ export function SiteHeader() {
         <Link className="site-nav-link" href="/#how">
           How Handoff works
         </Link>
-        <Link className="site-nav-link" href="/app">
+        <Link className="site-nav-link" href="/app/celo">
           Open Handoff app
         </Link>
       </nav>
