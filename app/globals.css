@@ -21,6 +21,14 @@ html {
   html {
     scroll-behavior: auto;
   }
+  .site-nav-link {
+    transition: none;
+  }
+  .button:hover,
+  .button:focus-visible {
+    transform: none;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
 }
 body {
   margin: 0;
