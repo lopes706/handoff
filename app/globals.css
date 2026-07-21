@@ -410,6 +410,11 @@ h3 {
   max-width: 42ch;
   line-height: 1.6;
 }
+.footer-note-label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+}
 .app-shell {
   min-height: 100vh;
 }
