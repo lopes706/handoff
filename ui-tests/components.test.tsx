@@ -10,7 +10,7 @@ describe("site header", () => {
     expect(homeLink).toHaveAttribute("href", "/");
     expect(homeLink).toHaveAttribute("aria-current", "page");
     expect(
-      screen.getByRole("link", { name: /how it works/i }),
+      screen.getByRole("link", { name: /how handoff works/i }),
     ).toHaveAttribute("href", "/#how");
     expect(
       screen.getByRole("link", { name: /open handoff app/i }),

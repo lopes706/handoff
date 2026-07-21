@@ -7,7 +7,7 @@ export function SiteHeader() {
       <Brand current />
       <nav aria-label="Primary navigation">
         <Link className="site-nav-link" href="/#how">
-          How it works
+          How Handoff works
         </Link>
         <Link className="site-nav-link" href="/app">
           Open Handoff app
