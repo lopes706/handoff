@@ -895,6 +895,16 @@ h3 {
     transition: none !important;
     animation: none !important;
   }
+  .button:hover,
+  .button:focus-visible {
+    transform: none;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .demo-step:hover,
+  .demo-step:focus-visible,
+  .demo-step[data-state="current"] {
+    padding-inline: 0;
+  }
   .parcel,
   .status-tape,
   .stamped {
