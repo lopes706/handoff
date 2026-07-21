@@ -336,6 +336,9 @@ h3 {
 .section {
   padding: 92px 0;
 }
+.section[id] {
+  scroll-margin-top: 28px;
+}
 .section.blue {
   background: var(--blue);
   color: white;
