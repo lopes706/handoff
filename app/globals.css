@@ -403,6 +403,10 @@ h3 {
   gap: 30px;
   align-items: flex-start;
 }
+.footer-note {
+  max-width: 42ch;
+  line-height: 1.6;
+}
 .app-shell {
   min-height: 100vh;
 }
