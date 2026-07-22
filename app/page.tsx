@@ -12,13 +12,13 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Handoff",
+    title: "In-person escrow on Celo and Stacks",
     description:
       "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock payment, inspect the item in person, then release.",
     url: "/",
   },
   twitter: {
-    title: "Handoff",
+    title: "In-person escrow on Celo and Stacks",
     description:
       "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock payment, inspect the item in person, then release.",
   },
