@@ -953,7 +953,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
         </aside>
       </div>
       {!terminal && (
-        <div className="bottom-dock" aria-label="Primary mobile action">
+        <section className="bottom-dock" aria-label="Primary mobile action">
           {status === "open" && !isSeller && (
             <button
               className="button primary"
@@ -994,7 +994,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
               Return funds to buyer
             </button>
           )}
-        </div>
+        </section>
       )}
       {showPass && ticket && (
         <div
