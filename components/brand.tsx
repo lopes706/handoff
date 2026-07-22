@@ -8,5 +8,29 @@ export function Brand({
   compact?: boolean;
   current?: boolean;
 }) {
-  return <Link className="brand" href="/" aria-current={current ? "page" : undefined} aria-label="Handoff home"><span className="brand-mark"><PackageCheck aria-hidden="true" /></span><span>HANDOFF{!compact && <small>inspect · exchange · release</small>}</span></Link>;
+  const content = (
+    <>
+      <span className="brand-mark">
+        <PackageCheck aria-hidden="true" />
+      </span>
+      <span>
+        HANDOFF
+        {!compact && <small>inspect · exchange · release</small>}
+      </span>
+    </>
+  );
+
+  if (current) {
+    return (
+      <span className="brand" aria-current="page">
+        {content}
+      </span>
+    );
+  }
+
+  return (
+    <Link className="brand" href="/" aria-label="Handoff home">
+      {content}
+    </Link>
+  );
 }
