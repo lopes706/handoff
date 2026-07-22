@@ -12,6 +12,9 @@ export function SiteHeader() {
         <Link className="site-nav-link" href="/app/celo">
           Open Celo app
         </Link>
+        <Link className="site-nav-link" href="/app/stacks">
+          Open Stacks app
+        </Link>
       </nav>
     </header>
   );
