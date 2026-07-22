@@ -31,8 +31,13 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open `http://localhost:3000` for the landing page, or jump straight to
-`/app/celo` and `/app/stacks` to test the chain-specific escrow flows.
+Open `http://localhost:3000` for the landing page, or jump straight to these
+local routes:
+
+- `http://localhost:3000/app/celo` for the Celo deals dashboard
+- `http://localhost:3000/app/celo/new` to create a new Celo handoff
+- `http://localhost:3000/app/stacks` for the Stacks deals dashboard
+- `http://localhost:3000/app/stacks/new` to create a new Stacks handoff
 
 Verified mainnet identifiers are built-in defaults; environment values can override them for another reviewed deployment. Testnet contract addresses remain required. See [deployment.md](docs/deployment.md) for every variable and the testnet-first workflow.
 
