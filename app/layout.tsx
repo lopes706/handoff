@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     title: "Handoff",
     description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
     type: "website",
+    locale: "en_US",
     url: "/",
     siteName: "Handoff",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Handoff preview card" }]
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Handoff",
     description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
-    images: ["/opengraph-image"]
+    images: [{ url: "/opengraph-image", alt: "Handoff preview card" }]
   },
   other: publicEnv.talentVerification
     ? { "talentapp:project_verification": publicEnv.talentVerification }
