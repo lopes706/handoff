@@ -234,6 +234,7 @@ export function NewDealClient({ network }: { network: Network }) {
                 <input
                   id="open"
                   type="radio"
+                  name="buyer-access"
                   checked={!restricted}
                   onChange={() => setRestricted(false)}
                 />
@@ -243,6 +244,7 @@ export function NewDealClient({ network }: { network: Network }) {
                 <input
                   id="named"
                   type="radio"
+                  name="buyer-access"
                   checked={restricted}
                   onChange={() => setRestricted(true)}
                 />
