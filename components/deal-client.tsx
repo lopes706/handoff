@@ -518,7 +518,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
             <span className="wallet-chip">{shortAddress(client.account)}</span>
           ) : (
             <button className="button" onClick={() => client.connect()}>
-              <Wallet size={18} /> Connect wallet
+              <Wallet aria-hidden="true" size={18} /> Connect wallet
             </button>
           )}
         </div>
@@ -543,7 +543,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                   </div>
                 )}
                 <p className="fineprint">
-                  <CheckCircle2 size={16} style={{ verticalAlign: "middle" }} />{" "}
+                  <CheckCircle2 aria-hidden="true" size={16} style={{ verticalAlign: "middle" }} />{" "}
                   Private sheet checksum and onchain terms fingerprint match.
                 </p>
               </>
@@ -574,7 +574,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
               className="button"
               onClick={() => sheetFile.current?.click()}
             >
-              <FileInput size={17} /> Import deal sheet
+              <FileInput aria-hidden="true" size={17} /> Import deal sheet
             </button>
             <div className="fact-grid">
               <div className="fact">
@@ -615,7 +615,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                   rel="noreferrer"
                 >
                   <strong>
-                    Inspect onchain <ExternalLink size={14} />
+                    Inspect onchain <ExternalLink aria-hidden="true" size={14} />
                   </strong>
                 </a>
               </div>
@@ -628,13 +628,13 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                     navigator.clipboard.writeText(window.location.href)
                   }
                 >
-                  <Clipboard size={17} /> Copy private link
+                  <Clipboard aria-hidden="true" size={17} /> Copy private link
                 </button>
                 <button
                   className="button"
                   onClick={() => download(dealSheetFilename(sheet), sheet)}
                 >
-                  <Download size={17} /> Back up sheet
+                  <Download aria-hidden="true" size={17} /> Back up sheet
                 </button>
               </div>
             )}
@@ -670,7 +670,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
               ) : (
                 <>
                   <div className="warning">
-                    <LockKeyhole />
+                    <LockKeyhole aria-hidden="true" />
                     {network === "celo"
                       ? "Celo may ask for an exact USDT approval, then a separate funding confirmation."
                       : "Stacks uses one call with an exact-deny sBTC post-condition."}
@@ -709,7 +709,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                     disabled={busy}
                     onClick={() => void showReleasePass()}
                   >
-                    <PackageCheck size={18} /> Show one-time release pass
+                    <PackageCheck aria-hidden="true" size={18} /> Show one-time release pass
                   </button>
                   <button
                     className="button"
@@ -731,7 +731,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                     className="button ghost"
                     onClick={() => download(ticketFilename(ticket), ticket)}
                   >
-                    <Download size={17} /> Back up release ticket
+                    <Download aria-hidden="true" size={17} /> Back up release ticket
                   </button>
                 </>
               ) : (
@@ -752,7 +752,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                     className="button"
                     onClick={() => ticketFile.current?.click()}
                   >
-                    <FileInput size={17} /> Import ticket
+                    <FileInput aria-hidden="true" size={17} /> Import ticket
                   </button>
                   <button
                     className="button primary"
@@ -786,7 +786,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                 className="button primary"
                 onClick={() => setShowScanner(true)}
               >
-                <Camera size={18} /> Scan release pass
+                <Camera aria-hidden="true" size={18} /> Scan release pass
               </button>
               <label
                 className="field-label"
@@ -823,7 +823,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                 className="button"
                 onClick={() => passFile.current?.click()}
               >
-                <FileInput size={17} /> Import release pass file
+                <FileInput aria-hidden="true" size={17} /> Import release pass file
               </button>
               {scannedSecret && (
                 <button
@@ -871,7 +871,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
           )}
           {status === "expired" && (
             <div className="action-panel orange-top">
-              <TimerReset />
+              <TimerReset aria-hidden="true" />
               <h3>Expiry reached</h3>
               <p>
                 Anyone may trigger this transaction. The exact principal always
@@ -929,26 +929,26 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  View transaction <ExternalLink size={14} />
+                  View transaction <ExternalLink aria-hidden="true" size={14} />
                 </a>
               )}
             </div>
           )}
           {error && (
             <div className="warning" role="alert">
-              <AlertTriangle />
+              <AlertTriangle aria-hidden="true" />
               {error}
               <button
                 className="button ghost"
                 onClick={() => setError("")}
                 aria-label="Dismiss error"
               >
-                <X />
+                <X aria-hidden="true" />
               </button>
             </div>
           )}
           <button className="button ghost" onClick={() => load()}>
-            <RefreshCcw size={16} /> Refresh from contract
+            <RefreshCcw aria-hidden="true" size={16} /> Refresh from contract
           </button>
         </aside>
       </div>
@@ -1014,7 +1014,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
               <QRCodeSVG value={qrPayload} size={260} level="M" />
             </div>
             <button className="button" onClick={() => setShowPass(false)}>
-              <X size={18} /> Hide pass
+              <X aria-hidden="true" size={18} /> Hide pass
             </button>
           </div>
         </div>
@@ -1026,7 +1026,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
             <h2>Frame the buyer’s pass.</h2>
             <ReleaseScanner onRead={(value) => void acceptPass(value)} />
             <button className="button" onClick={() => setShowScanner(false)}>
-              <X size={18} /> Close scanner
+              <X aria-hidden="true" size={18} /> Close scanner
             </button>
           </div>
         </div>
