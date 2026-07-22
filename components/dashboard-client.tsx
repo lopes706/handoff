@@ -152,7 +152,7 @@ export function DashboardClient({
     };
   }, [client.account, client.connected, client.repository]);
   return (
-    <main className="app-main">
+    <div className="app-main">
       {preview && <div className="preview-ribbon">LOCAL PREVIEW</div>}
       <div className="app-heading">
         <div>
@@ -307,6 +307,6 @@ export function DashboardClient({
           </aside>
         </div>
       )}
-    </main>
+    </div>
   );
 }

@@ -463,7 +463,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
   }
   if (deal === undefined)
     return (
-      <main className="app-main">
+      <div className="app-main">
         <div className="setup">
           <AlertTriangle aria-hidden="true" />
           <div>
@@ -480,11 +480,11 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
             </Link>
           </div>
         </div>
-      </main>
+      </div>
     );
   if (deal === null)
     return (
-      <main className="app-main">
+      <div className="app-main">
         <div className="invalid-card">
           <h1>Unknown deal.</h1>
           <p>
@@ -494,17 +494,17 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
             Return to deals
           </Link>
         </div>
-      </main>
+      </div>
     );
   if (!deal)
     return (
-      <main className="app-main">
+      <div className="app-main">
         <p>Reading the contract and private sheet…</p>
-      </main>
+      </div>
     );
   const terminal = ["completed", "refunded", "cancelled"].includes(deal.status);
   return (
-    <main className="app-main">
+    <div className="app-main">
       {preview && <div className="preview-ribbon">LOCAL PREVIEW</div>}
       <div className="app-heading">
         <div>
@@ -1031,6 +1031,6 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
           </div>
         </div>
       )}
-    </main>
+    </div>
   );
 }

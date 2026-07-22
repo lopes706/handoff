@@ -111,7 +111,7 @@ export function NewDealClient({ network }: { network: Network }) {
     }
   }
   return (
-    <main className="app-main">
+    <div className="app-main">
       <div className="app-heading">
         <div>
           <span className={`tag ${network}`}>
@@ -319,6 +319,6 @@ export function NewDealClient({ network }: { network: Network }) {
           </button>
         </div>
       </form>
-    </main>
+    </div>
   );
 }
