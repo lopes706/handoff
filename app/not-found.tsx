@@ -27,7 +27,7 @@ export default function NotFound() {
         </p>
         <div className="button-row">
           <Link className="button primary" href="/app/celo">
-            Open Handoff app
+            Open Celo app
           </Link>
           <Link className="button" href="/">
             Return home
