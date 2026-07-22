@@ -29,6 +29,9 @@ export default function NotFound() {
           <Link className="button primary" href="/app/celo">
             Open Celo app
           </Link>
+          <Link className="button primary" href="/app/stacks">
+            Open Stacks app
+          </Link>
           <Link className="button" href="/">
             Return home
           </Link>
