@@ -31,6 +31,9 @@ cp .env.example .env.local
 npm run dev
 ```
 
+Open `http://localhost:3000` for the landing page, or jump straight to
+`/app/celo` and `/app/stacks` to test the chain-specific escrow flows.
+
 Verified mainnet identifiers are built-in defaults; environment values can override them for another reviewed deployment. Testnet contract addresses remain required. See [deployment.md](docs/deployment.md) for every variable and the testnet-first workflow.
 
 ## Verification
