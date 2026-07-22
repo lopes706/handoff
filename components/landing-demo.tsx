@@ -52,6 +52,7 @@ export function LandingDemo() {
           aria-live="polite"
           id={panelId}
           role="tabpanel"
+          tabIndex={0}
           style={{ display: "flex", gap: 14, alignItems: "center", margin: "17px 0" }}
         >
           <Icon aria-hidden="true" />
