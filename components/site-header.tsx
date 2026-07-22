@@ -10,7 +10,7 @@ export function SiteHeader() {
           How Handoff works
         </Link>
         <Link className="site-nav-link" href="/app/celo">
-          Open Handoff app
+          Open Celo app
         </Link>
       </nav>
     </header>
