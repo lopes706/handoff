@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Stacks sBTC escrow",
     "buyer-controlled escrow",
   ],
-  applicationName: "Handoff",
+  applicationName: "Handoff Escrow",
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
