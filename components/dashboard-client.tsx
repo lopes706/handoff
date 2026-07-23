@@ -198,7 +198,7 @@ export function DashboardClient({
         </div>
       </div>
       {!client.repository.configured && !preview ? (
-        <div className="setup" role="status">
+        <div className="setup" role="alert" aria-atomic="true">
           <AlertTriangle aria-hidden="true" />
           <div>
             <h3>Contract setup required</h3>
