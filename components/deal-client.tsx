@@ -552,7 +552,8 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
                 <h2 className="deal-title">Private terms unavailable</h2>
                 <p>
                   The onchain deal exists, but the human-readable sheet did not
-                  arrive with this URL.
+                  arrive with this URL. Ask the sender for the full link again
+                  or import the exported deal sheet file below.
                 </p>
               </>
             )}{" "}
