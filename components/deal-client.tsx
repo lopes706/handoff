@@ -526,7 +526,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
       <div className="deal-layout">
         <section className="deal-label">
           <div className="deal-label-head">
-            <span className="eyebrow">Unlisted handoff deal</span>
+            <span className="eyebrow">Unlisted deal sheet</span>
             <span className="status-tape">{status}</span>
           </div>
           <div className="deal-label-body">
