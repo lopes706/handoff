@@ -265,7 +265,7 @@ export function NewDealClient({ network }: { network: Network }) {
                 spellCheck={false}
                 value={buyer}
                 onChange={(e) => setBuyer(e.target.value)}
-                placeholder={network === "celo" ? "0x…" : "SP… / ST…"}
+                placeholder={network === "celo" ? "0x…" : "SP… or ST… address"}
               />
               <small id="buyer-hint">
                 Use the wallet address expected to fund and release this deal.
