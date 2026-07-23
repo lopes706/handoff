@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     apple: "/apple-icon",
   },
   openGraph: {
-    title: "Handoff",
+    title: "Handoff — inspect, exchange, release",
     description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
     type: "website",
     locale: "en_US",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Handoff",
+    title: "Handoff — inspect, exchange, release",
     description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
     images: [{ url: "/opengraph-image", alt: "Handoff preview card" }]
   },
