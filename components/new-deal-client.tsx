@@ -315,7 +315,7 @@ export function NewDealClient({ network }: { network: Network }) {
               "Creating deal sheet…"
             ) : (
               <>
-                Create unlisted deal <ArrowRight aria-hidden="true" size={18} />
+                Create unlisted deal sheet <ArrowRight aria-hidden="true" size={18} />
               </>
             )}
           </button>
