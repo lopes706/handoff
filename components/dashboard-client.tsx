@@ -280,7 +280,7 @@ export function DashboardClient({
                     buyer.
                   </p>
                   <Link className="button primary" href={`/app/${network}/new`}>
-                    Create first handoff
+                    Create first deal sheet
                   </Link>
                 </div>
               )}
