@@ -20,9 +20,9 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     shortcuts: [
       {
-        name: "New Celo handoff",
+        name: "New Celo deal sheet",
         short_name: "New Celo",
-        description: "Open the new-deal form for a Celo handoff with USDT.",
+        description: "Open the new-deal form for a Celo deal sheet with USDT.",
         url: "/app/celo/new",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
@@ -30,9 +30,9 @@ export default function manifest(): MetadataRoute.Manifest {
         ]
       },
       {
-        name: "New Stacks handoff",
+        name: "New Stacks deal sheet",
         short_name: "New Stacks",
-        description: "Open the new-deal form for a Stacks handoff with sBTC.",
+        description: "Open the new-deal form for a Stacks deal sheet with sBTC.",
         url: "/app/stacks/new",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
