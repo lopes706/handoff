@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ network: 
   if (!isNetwork(network)) return { title: "Open app" };
   return {
     title: `${networkLabel(network)} deals`,
-    description: `Review live and expired Handoff deals on ${networkLabel(network)}.`,
+    description: `Review active and expired Handoff deals on ${networkLabel(network)}.`,
   };
 }
 
