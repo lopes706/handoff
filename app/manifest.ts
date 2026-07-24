@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: "ltr",
     name: "Handoff Escrow",
     short_name: "Handoff",
-    description: "Buyer-controlled in-person escrow on Celo and Stacks.",
+    description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
     start_url: "/app/celo",
     scope: "/app",
     display: "standalone",
@@ -22,7 +22,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "New Celo deal sheet",
         short_name: "New Celo",
-        description: "Open the new-deal form for a Celo deal sheet with USDT.",
+        description: "Start a new Celo handoff funded with USDT.",
         url: "/app/celo/new",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
@@ -32,7 +32,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "New Stacks deal sheet",
         short_name: "New Stacks",
-        description: "Open the new-deal form for a Stacks deal sheet with sBTC.",
+        description: "Start a new Stacks handoff funded with sBTC.",
         url: "/app/stacks/new",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
