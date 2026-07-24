@@ -27,9 +27,13 @@ Use Node 22.13 or newer.
 
 ```bash
 npm ci
-cp .env.example .env.local
+cp .env.example .env
 npm run dev
 ```
+
+Use `.env.local` only for local Next.js-only overrides. The shared default
+setup lives in `.env` so `npm run check:env` and the deployment scripts read
+the same values.
 
 Open `http://localhost:3000` for the landing page, or jump straight to these
 local routes:

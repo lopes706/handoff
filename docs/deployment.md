@@ -12,7 +12,7 @@ Canonical application defaults:
 
 Public app values: `NEXT_PUBLIC_APP_URL`, `NEXT_PUBLIC_TALENT_PROJECT_VERIFICATION`, selected Celo/Stacks networks, optional Handoff deployment overrides, official USDT/sBTC identifiers, and RPC/API URLs. Mainnet app builds fall back to the canonical identifiers above; testnet builds do not. Private operator values: `PRIVATE_KEY`, network RPC URLs, per-network deployed Celo addresses, verification credentials, `STACKS_PRIVATE_KEY`, selected deployment network, deployed Stacks IDs, and positive `STACKS_DEPLOY_FEE_MICROSTX`.
 
-Copy `.env.example`; never commit a populated file. `npm run check:env` validates formats and cross-network asset choices. Scripts print outputs and never rewrite an environment file.
+Copy `.env.example` to `.env`; use `.env.local` only for local Next.js-only overrides. Never commit a populated file. `npm run check:env` validates formats and cross-network asset choices. Scripts print outputs and never rewrite an environment file.
 
 ## Testnet first
 
