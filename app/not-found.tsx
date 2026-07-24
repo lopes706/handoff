@@ -26,13 +26,13 @@ export default function NotFound() {
           sheet stays only in the link and is never sent with the page request.
         </p>
         <div className="button-row">
-          <Link className="button primary" href="/app/celo">
+          <Link className="button" href="/app/celo">
             Open Celo app
           </Link>
-          <Link className="button primary" href="/app/stacks">
+          <Link className="button" href="/app/stacks">
             Open Stacks app
           </Link>
-          <Link className="button" href="/">
+          <Link className="button primary" href="/">
             Return home
           </Link>
         </div>
