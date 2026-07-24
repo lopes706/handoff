@@ -20,16 +20,13 @@ export function Brand({
     </>
   );
 
-  if (current) {
-    return (
-      <span className="brand" aria-current="page">
-        {content}
-      </span>
-    );
-  }
-
   return (
-    <Link className="brand" href="/" aria-label="Handoff home">
+    <Link
+      aria-current={current ? "page" : undefined}
+      aria-label={current ? "Handoff home, current page" : "Handoff home"}
+      className="brand"
+      href="/"
+    >
       {content}
     </Link>
   );
