@@ -6,7 +6,7 @@ import { Check, LockKeyhole, PackageOpen } from "lucide-react";
 const steps = [
   { title: "Create deal sheet", copy: "Seller writes the item, price, meeting hint and expiry.", icon: PackageOpen },
   { title: "Lock payment", copy: "Buyer verifies the private sheet and funds the onchain escrow.", icon: LockKeyhole },
-  { title: "Hand over", copy: "Buyer inspects the item, then releases directly or shows a one-time pass.", icon: Check }
+  { title: "Hand off", copy: "Buyer inspects the item, then releases directly or shows the seller a one-time pass.", icon: Check }
 ];
 
 export function LandingDemo() {
