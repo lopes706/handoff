@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: "ltr",
     name: "Handoff Escrow",
     short_name: "Handoff",
-    description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
+    description: "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock payment, inspect in person, then release.",
     start_url: "/app/celo",
     scope: "/app",
     display: "standalone",
