@@ -276,8 +276,8 @@ export function DashboardClient({
                 <div className="empty">
                   <h3>No deals yet</h3>
                   <p>
-                    Create an unlisted deal and share it directly with your
-                    buyer.
+                    Create an unlisted deal sheet and share it directly with
+                    your buyer.
                   </p>
                   <Link className="button primary" href={`/app/${network}/new`}>
                     Create first deal sheet
