@@ -19,11 +19,11 @@ export default function NotFound() {
         <span className="eyebrow">Page not found · 404</span>
         <h1>This Handoff page could not be found.</h1>
         <p>
-          This link does not open a valid Handoff screen. Check the shared URL.
-          If the sender included a private deal sheet, ask them to copy the
-          full link again and make sure it still contains the{" "}
-          <span className="mono">#sheet=</span> fragment. That private deal
-          sheet stays only in the link and is never sent with the page request.
+          This link does not open a valid Handoff screen. Ask the sender to
+          resend the full URL, including the{" "}
+          <span className="mono">#sheet=</span> fragment when a private deal
+          sheet is attached. That private deal sheet stays only in the link and
+          is never sent with the page request.
         </p>
         <div className="button-row">
           <Link className="button" href="/app/celo">
