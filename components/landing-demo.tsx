@@ -37,7 +37,7 @@ export function LandingDemo() {
             <span className="eyebrow" aria-hidden="true">Local preview · not live</span>
             <h3 id={previewTitleId} style={{ margin: "5px 0 0" }}>Deal #0042</h3>
           </div>
-          <span className="status-tape">{active === 0 ? "open" : active === 1 ? "funded" : "released"}</span>
+          <span className="status-tape">{active === 0 ? "open" : active === 1 ? "funded" : "completed"}</span>
         </div>
         <div className="barcode" aria-hidden="true" />
         <p className="sr-only" id={previewNoteId}>
