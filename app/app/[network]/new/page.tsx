@@ -7,9 +7,25 @@ import { isNetwork, networkLabel } from "@/lib/format";
 export async function generateMetadata({ params }: { params: Promise<{ network: string }> }): Promise<Metadata> {
   const { network } = await params;
   if (!isNetwork(network)) return { title: "Create deal sheet" };
+  const label = networkLabel(network);
+  const title = `Create ${label} deal sheet`;
+  const description = `Prepare a private ${label} deal sheet for an in-person exchange.`;
+  const url = `/app/${network}/new`;
   return {
-    title: `Create ${networkLabel(network)} deal sheet`,
-    description: `Prepare a private ${networkLabel(network)} deal sheet for an in-person exchange.`,
+    title,
+    description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+    },
+    twitter: {
+      title,
+      description,
+    },
   };
 }
 
