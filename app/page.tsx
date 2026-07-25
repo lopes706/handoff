@@ -7,14 +7,14 @@ import { SiteHeader } from "@/components/site-header";
 export const metadata: Metadata = {
   title: "In-person escrow on Celo and Stacks",
   description:
-    "Buyer-controlled escrow for local exchanges. Lock USDT or sats, inspect the item in person, then release.",
+    "Buyer-controlled escrow for local exchanges. Lock USDT on Celo or sats on Stacks, inspect the item in person, then release.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "In-person escrow on Celo and Stacks",
     description:
-      "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock payment, inspect the item in person, then release.",
+      "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock USDT on Celo or sats on Stacks, inspect the item in person, then release.",
     type: "website",
     url: "/",
     siteName: "Handoff",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "In-person escrow on Celo and Stacks",
     description:
-      "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock payment, inspect the item in person, then release.",
+      "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock USDT on Celo or sats on Stacks, inspect the item in person, then release.",
     images: [{ url: "/opengraph-image", alt: "Handoff preview card" }],
   },
 };
