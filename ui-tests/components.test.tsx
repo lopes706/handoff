@@ -4,7 +4,7 @@ import { LandingDemo } from "@/components/landing-demo";
 import { SiteHeader } from "@/components/site-header";
 
 describe("site header", () => {
-  it("keeps both primary navigation links available", () => {
+  it("keeps the primary navigation links available", () => {
     render(<SiteHeader />);
     const homeLink = screen.getByRole("link", { name: /handoff home/i });
     expect(homeLink).toHaveAttribute("href", "/");
@@ -13,8 +13,11 @@ describe("site header", () => {
       screen.getByRole("link", { name: /how handoff works/i }),
     ).toHaveAttribute("href", "/#how");
     expect(
-      screen.getByRole("link", { name: /open handoff app/i }),
-    ).toHaveAttribute("href", "/app");
+      screen.getByRole("link", { name: /open celo app/i }),
+    ).toHaveAttribute("href", "/app/celo");
+    expect(
+      screen.getByRole("link", { name: /open stacks app/i }),
+    ).toHaveAttribute("href", "/app/stacks");
   });
 });
 
