@@ -26,14 +26,14 @@ export default function NotFound() {
           sent with the page request.
         </p>
         <div className="button-row">
+          <Link className="button primary" href="/">
+            Return to home page
+          </Link>
           <Link className="button" href="/app/celo">
             Open Celo app
           </Link>
           <Link className="button" href="/app/stacks">
             Open Stacks app
-          </Link>
-          <Link className="button primary" href="/">
-            Return home
           </Link>
         </div>
       </section>
