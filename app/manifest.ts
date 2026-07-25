@@ -20,6 +20,26 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     shortcuts: [
       {
+        name: "Open Celo deals",
+        short_name: "Celo deals",
+        description: "Open the Celo deals dashboard.",
+        url: "/app/celo",
+        icons: [
+          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
+          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
+        ],
+      },
+      {
+        name: "Open Stacks deals",
+        short_name: "Stacks deals",
+        description: "Open the Stacks deals dashboard.",
+        url: "/app/stacks",
+        icons: [
+          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
+          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
+        ],
+      },
+      {
         name: "New Celo deal sheet",
         short_name: "New Celo",
         description: "Start a new Celo handoff funded with USDT.",
@@ -27,7 +47,7 @@ export default function manifest(): MetadataRoute.Manifest {
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
-        ]
+        ],
       },
       {
         name: "New Stacks deal sheet",
@@ -37,8 +57,8 @@ export default function manifest(): MetadataRoute.Manifest {
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   };
 }
