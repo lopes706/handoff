@@ -1,6 +1,6 @@
 # Handoff
 
-Handoff is buyer-controlled, backendless escrow for a small in-person exchange. A seller creates an unlisted deal sheet, a buyer locks up to 50 USDT on Celo or 50,000 sats on Stacks, and the buyer releases only after inspecting the item. The buyer can confirm in their wallet or show the seller a one-time release pass.
+Handoff is buyer-controlled, backendless escrow for a small in-person exchange. A seller creates an unlisted deal sheet, a buyer locks up to 50 USDT on Celo or 50,000 sats via sBTC on Stacks, and the buyer releases only after inspecting the item. The buyer can confirm in their wallet or show the seller a one-time release pass.
 
 This repository is code-ready and deployed on Celo and Stacks mainnet, but remains unaudited. It performs no shipping, dispute resolution, arbitration, trust scoring, account recovery, custody outside funded deals, or support override.
 
