@@ -192,7 +192,7 @@ export function DashboardClient({
                 ? "Connecting…"
                 : network === "celo"
                   ? "Connect wallet"
-                  : "Connect Stacks"}
+                  : "Connect Stacks wallet"}
             </button>
           )}
         </div>
