@@ -20,10 +20,10 @@ export default function NotFound() {
         <h1>This Handoff page could not be found.</h1>
         <p>
           This link does not open a valid Handoff screen. Ask the sender to
-          resend the full URL, including the{" "}
-          <span className="mono">#sheet=</span> fragment when a private deal
-          sheet is attached. That private deal sheet stays only in the link and
-          is never sent with the page request.
+          resend the full URL, including everything after the{" "}
+          <span className="mono">#</span> when a private deal sheet is
+          attached. The private deal sheet stays only in the link and is never
+          sent with the page request.
         </p>
         <div className="button-row">
           <Link className="button" href="/app/celo">
