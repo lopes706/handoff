@@ -13,6 +13,9 @@ describe("site header", () => {
       screen.getByRole("link", { name: /how handoff works/i }),
     ).toHaveAttribute("href", "/#how");
     expect(
+      screen.getByRole("link", { name: /safety boundaries/i }),
+    ).toHaveAttribute("href", "/#safety");
+    expect(
       screen.getByRole("link", { name: /open celo app/i }),
     ).toHaveAttribute("href", "/app/celo");
     expect(

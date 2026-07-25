@@ -9,6 +9,9 @@ export function SiteHeader() {
         <Link className="site-nav-link" href="/#how">
           How Handoff works
         </Link>
+        <Link className="site-nav-link" href="/#safety">
+          Safety boundaries
+        </Link>
         <Link className="site-nav-link" href="/app/celo">
           Open Celo app
         </Link>
