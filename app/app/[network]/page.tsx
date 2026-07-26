@@ -6,7 +6,7 @@ import { isNetwork, networkLabel } from "@/lib/format";
 
 export async function generateMetadata({ params }: { params: Promise<{ network: string }> }): Promise<Metadata> {
   const { network } = await params;
-  if (!isNetwork(network)) return { title: "Open app" };
+  if (!isNetwork(network)) return { title: "Open dashboard" };
   const label = networkLabel(network);
   const title = `${label} deals`;
   const description = `Review active and expired Handoff deals on ${label}.`;
