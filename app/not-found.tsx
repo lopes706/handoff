@@ -4,7 +4,7 @@ import { PackageX } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Page not found",
-  description: "The requested Handoff page is unavailable. Open a dashboard or return to the home page.",
+  description: "The requested Handoff page is unavailable. Check that the full link was copied, then open a dashboard or return home.",
   robots: {
     index: false,
     follow: false,
@@ -20,9 +20,9 @@ export default function NotFound() {
         <h1>This Handoff page could not be found.</h1>
         <p>
           This link does not open a valid Handoff screen. Ask the sender to
-          resend the full URL, including everything after the <code>#</code>{" "}
-          when a private deal sheet is attached. The private deal sheet stays
-          only in the link and is never sent with the page request.
+          resend the full URL, including the part after the <code>#</code>{" "}
+          symbol when a private deal sheet is attached. The private deal sheet
+          stays only in the link itself and is never sent with the page request.
         </p>
         <div className="button-row">
           <Link className="button primary" href="/">
