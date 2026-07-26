@@ -4,7 +4,7 @@ import { PackageX } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Page not found",
-  description: "The requested Handoff page is unavailable. Open the app or return to the home page.",
+  description: "The requested Handoff page is unavailable. Open a dashboard or return to the home page.",
   robots: {
     index: false,
     follow: false,
@@ -30,10 +30,10 @@ export default function NotFound() {
             Return to home page
           </Link>
           <Link className="button" href="/app/celo">
-            Open Celo app
+            Open Celo dashboard
           </Link>
           <Link className="button" href="/app/stacks">
-            Open Stacks app
+            Open Stacks dashboard
           </Link>
         </div>
       </section>

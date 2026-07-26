@@ -13,10 +13,10 @@ export function SiteHeader() {
           Safety boundaries
         </Link>
         <Link className="site-nav-link" href="/app/celo">
-          Open Celo app
+          Open Celo dashboard
         </Link>
         <Link className="site-nav-link" href="/app/stacks">
-          Open Stacks app
+          Open Stacks dashboard
         </Link>
       </nav>
     </header>
