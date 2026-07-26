@@ -20,9 +20,9 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     shortcuts: [
       {
-        name: "Open Celo deals",
-        short_name: "Celo deals",
-        description: "Open the Celo deals dashboard.",
+        name: "Open Celo dashboard",
+        short_name: "Celo dashboard",
+        description: "Open the Celo dashboard.",
         url: "/app/celo",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
@@ -30,9 +30,9 @@ export default function manifest(): MetadataRoute.Manifest {
         ],
       },
       {
-        name: "Open Stacks deals",
-        short_name: "Stacks deals",
-        description: "Open the Stacks deals dashboard.",
+        name: "Open Stacks dashboard",
+        short_name: "Stacks dashboard",
+        description: "Open the Stacks dashboard.",
         url: "/app/stacks",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
