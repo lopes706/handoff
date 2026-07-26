@@ -14,6 +14,7 @@ export function LandingDemo() {
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const step = steps[active];
   const Icon = step.icon;
+  const statusLabel = active === 0 ? "Open" : active === 1 ? "Funded" : "Completed";
   const panelId = "demo-step-panel";
   const instructionsId = "demo-step-instructions";
   const previewNoteId = "demo-preview-note";
@@ -37,7 +38,10 @@ export function LandingDemo() {
             <span className="eyebrow" aria-hidden="true">Local preview · not live</span>
             <h3 id={previewTitleId} style={{ margin: "5px 0 0" }}>Deal #0042</h3>
           </div>
-          <span className="status-tape">{active === 0 ? "open" : active === 1 ? "funded" : "completed"}</span>
+          <span aria-live="polite" className="status-tape">
+            <span className="sr-only">Deal status: </span>
+            {statusLabel}
+          </span>
         </div>
         <div className="barcode" aria-hidden="true" />
         <p className="sr-only" id={previewNoteId}>
