@@ -191,7 +191,7 @@ export function DashboardClient({
               {client.connecting
                 ? "Connecting…"
                 : network === "celo"
-                  ? "Connect wallet"
+                  ? "Connect Celo wallet"
                   : "Connect Stacks wallet"}
             </button>
           )}
