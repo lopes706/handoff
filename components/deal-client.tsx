@@ -518,7 +518,7 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
             <span className="wallet-chip">{shortAddress(client.account)}</span>
           ) : (
             <button className="button" onClick={() => client.connect()}>
-              <Wallet aria-hidden="true" size={18} /> Connect wallet
+              <Wallet aria-hidden="true" size={18} /> Connect wallet to continue
             </button>
           )}
         </div>
