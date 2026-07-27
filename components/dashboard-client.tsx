@@ -86,6 +86,18 @@ function previewDeals(network: Network): HandoffDeal[] {
     },
   ];
 }
+
+function describeDealRow(
+  deal: HandoffDeal,
+  amountLabel: string,
+) {
+  return `Deal ${deal.id.toString()}, ${deal.status}, seller ${shortAddress(
+    deal.seller,
+  )}, buyer ${
+    deal.buyer ? shortAddress(deal.buyer) : "waiting for buyer"
+  }, amount ${amountLabel}`;
+}
+
 export function DashboardClient({
   network,
   preview = false,
@@ -242,6 +254,14 @@ export function DashboardClient({
               ) : (preview ? previewDeals(network) : deals).length ? (
                 (preview ? previewDeals(network) : deals).map((deal) => (
                   <Link
+                    aria-label={describeDealRow(
+                      deal,
+                      formatAsset(
+                        deal.amount,
+                        client.repository.assetDecimals,
+                        client.repository.assetSymbol,
+                      ),
+                    )}
                     className="deal-row"
                     href={
                       preview
