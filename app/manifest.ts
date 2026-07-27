@@ -2,14 +2,14 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    id: "/app",
+    id: "/app/",
     lang: "en-US",
     dir: "ltr",
     name: "Handoff Escrow",
     short_name: "Handoff",
     description: "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock payment, inspect in person, then release.",
     start_url: "/app/celo",
-    scope: "/app",
+    scope: "/app/",
     display: "standalone",
     background_color: "#F2E9D8",
     theme_color: "#F2E9D8",
