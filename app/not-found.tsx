@@ -21,8 +21,10 @@ export default function NotFound() {
         <p>
           This link does not open a valid Handoff screen. Ask the sender to
           resend the full URL, including the part after the <code>#</code>{" "}
-          symbol when a private deal sheet is attached. The private deal sheet
-          stays only in the link itself and is never sent with the page request.
+          symbol when a private deal sheet is attached. Some chat apps and
+          manual copy steps drop everything after <code>#</code>, which breaks
+          the attached deal sheet. The private deal sheet stays only in the
+          link itself and is never sent with the page request.
         </p>
         <div className="button-row">
           <Link className="button primary" href="/">
