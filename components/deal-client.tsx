@@ -796,7 +796,17 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
               >
                 Or paste pass JSON
               </label>
+              <p
+                className="fineprint"
+                id="manual-pass-hint"
+                style={{ margin: "-2px 0 10px" }}
+              >
+                Paste the full release pass JSON from the buyer backup or QR
+                export. Handoff checks the network, contract and deal before
+                enabling a claim.
+              </p>
               <textarea
+                aria-describedby="manual-pass-hint"
                 id="manual-pass"
                 value={manualPass}
                 onChange={(e) => setManualPass(e.target.value)}
