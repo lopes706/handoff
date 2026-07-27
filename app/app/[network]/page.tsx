@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ network: 
   if (!isNetwork(network)) return { title: "Open dashboard" };
   const label = networkLabel(network);
   const title = `${label} deals`;
-  const description = `Review active and expired Handoff deals on ${label}.`;
+  const description = `Inspect active, refunded, and expired Handoff deals on ${label} with the wallet that created or funded them.`;
   const url = `/app/${network}`;
   return {
     title,

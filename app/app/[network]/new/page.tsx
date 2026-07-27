@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ network: 
   if (!isNetwork(network)) return { title: "Create deal sheet" };
   const label = networkLabel(network);
   const title = `Create ${label} deal sheet`;
-  const description = `Prepare a private ${label} deal sheet for an in-person exchange.`;
+  const description = `Prepare an unlisted private ${label} deal sheet for an in-person exchange before sharing it with the buyer.`;
   const url = `/app/${network}/new`;
   return {
     title,
