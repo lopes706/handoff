@@ -121,7 +121,8 @@ export function LandingDemo() {
           })}
         </div>
         <p className="fineprint" style={{ margin: "12px 0 0" }}>
-          Keyboard tip: use Left and Right Arrow to move between stops.
+          Keyboard tip: use Left and Right Arrow to move between stops, or Home
+          and End to jump to the first or last stop.
         </p>
       </div>
     </div>
