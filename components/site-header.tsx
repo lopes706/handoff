@@ -6,12 +6,12 @@ export function SiteHeader() {
     <header className="site-header">
       <Brand current />
       <nav aria-label="Primary navigation">
-        <Link className="site-nav-link" href="/#how">
+        <a className="site-nav-link" href="#how">
           How Handoff works
-        </Link>
-        <Link className="site-nav-link" href="/#safety">
+        </a>
+        <a className="site-nav-link" href="#safety">
           Safety boundaries
-        </Link>
+        </a>
         <Link className="site-nav-link" href="/app/celo">
           Open Celo dashboard
         </Link>
