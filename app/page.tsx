@@ -5,16 +5,16 @@ import { LandingDemo } from "@/components/landing-demo";
 import { SiteHeader } from "@/components/site-header";
 
 export const metadata: Metadata = {
-  title: "In-person escrow on Celo and Stacks",
+  title: "Handoff — lock payment, inspect first",
   description:
-    "Buyer-controlled escrow for local exchanges. Lock USDT on Celo or sats via sBTC on Stacks, inspect the item in person, then release.",
+    "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "In-person escrow on Celo and Stacks",
+    title: "Handoff — lock payment, inspect first",
     description:
-      "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock USDT on Celo or sats via sBTC on Stacks, inspect the item in person, then release.",
+      "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
     type: "website",
     url: "/",
     siteName: "Handoff",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "In-person escrow on Celo and Stacks",
+    title: "Handoff — lock payment, inspect first",
     description:
-      "Buyer-controlled escrow for local exchanges on Celo and Stacks. Lock USDT on Celo or sats via sBTC on Stacks, inspect the item in person, then release.",
+      "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
     images: [{ url: "/opengraph-image", alt: "Handoff preview card" }],
   },
 };
