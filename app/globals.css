@@ -934,6 +934,12 @@ h3 {
     transition: none !important;
     animation: none !important;
   }
+  .site-nav-link:hover,
+  .site-nav-link:focus-visible,
+  .site-nav-link[aria-current="page"] {
+    transform: none;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
   .button:hover,
   .button:focus-visible {
     transform: none;
