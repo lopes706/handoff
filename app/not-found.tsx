@@ -24,7 +24,10 @@ export default function NotFound() {
           symbol when a private deal sheet is attached. Some chat apps and
           manual copy steps drop everything after <code>#</code>, which breaks
           the attached deal sheet. The private deal sheet stays only in the
-          link itself and is never sent with the page request.
+          link itself and is never sent with the page request. If the full link
+          cannot be recovered, ask the sender for the portable{" "}
+          <code>.handoff.json</code> deal sheet and import it from a dashboard
+          instead.
         </p>
         <div className="button-row">
           <Link className="button primary" href="/">
