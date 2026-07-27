@@ -16,7 +16,7 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ["finance", "utilities"],
     icons: [
       { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-      { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
+      { src: "/logo-square.svg", sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" },
     ],
     shortcuts: [
       {
@@ -26,7 +26,7 @@ export default function manifest(): MetadataRoute.Manifest {
         url: "/app/celo",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
+          { src: "/logo-square.svg", sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" },
         ],
       },
       {
@@ -36,7 +36,7 @@ export default function manifest(): MetadataRoute.Manifest {
         url: "/app/stacks",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
+          { src: "/logo-square.svg", sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" },
         ],
       },
       {
@@ -46,7 +46,7 @@ export default function manifest(): MetadataRoute.Manifest {
         url: "/app/celo/new",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
+          { src: "/logo-square.svg", sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" },
         ],
       },
       {
@@ -56,7 +56,7 @@ export default function manifest(): MetadataRoute.Manifest {
         url: "/app/stacks/new",
         icons: [
           { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-          { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "maskable" },
+          { src: "/logo-square.svg", sizes: "512x512", type: "image/svg+xml", purpose: "any maskable" },
         ],
       },
     ],
