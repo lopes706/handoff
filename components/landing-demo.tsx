@@ -120,6 +120,9 @@ export function LandingDemo() {
             );
           })}
         </div>
+        <p className="fineprint" style={{ margin: "12px 0 0" }}>
+          Keyboard tip: use Left and Right Arrow to move between stops.
+        </p>
       </div>
     </div>
   );
