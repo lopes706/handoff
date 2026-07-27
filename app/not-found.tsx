@@ -19,15 +19,20 @@ export default function NotFound() {
         <span className="eyebrow">Page not found · 404</span>
         <h1>This Handoff page could not be found.</h1>
         <p>
-          This link does not open a valid Handoff screen. Ask the sender to
-          resend the full URL, including the part after the <code>#</code>{" "}
-          symbol when a private deal sheet is attached. Some chat apps and
-          manual copy steps drop everything after <code>#</code>, which breaks
-          the attached deal sheet. The private deal sheet stays only in the
-          link itself and is never sent with the page request. If the full link
-          cannot be recovered, ask the sender for the portable{" "}
-          <code>.handoff.json</code> deal sheet and import it from a dashboard
-          instead.
+          This link does not open a valid Handoff screen. The most common cause
+          is a shortened or partially copied URL.
+        </p>
+        <p>
+          When a private deal sheet is attached, the part after the{" "}
+          <code>#</code> symbol must stay intact. Some chat apps and manual
+          copy steps drop that fragment, which breaks the attached deal sheet.
+          The private deal sheet lives only in the link itself and is never
+          sent with the page request.
+        </p>
+        <p>
+          Ask the sender to resend the full link. If it cannot be recovered,
+          ask for the portable <code>.handoff.json</code> deal sheet and import
+          it from a dashboard instead.
         </p>
         <div className="button-row">
           <Link className="button primary" href="/">
