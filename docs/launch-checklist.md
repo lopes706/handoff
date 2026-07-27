@@ -7,6 +7,7 @@
 - [ ] MiniPay auto-access, standard Celo switching, Stacks connect/disconnect, rejection, and pending recovery tested on real devices.
 - [ ] Link/file/ticket round trips tested across devices without exposing fragments to metadata or logs.
 - [ ] Desktop and mobile landing, dashboard, creation, deal, pass, scanner, refund, receipt, setup and 404 inspected.
+- [ ] PWA install surface, home-screen icon, and manifest shortcuts checked on supported mobile browsers.
 - [ ] Privacy, irreversible release, unsupported transfer, in-person-only, unaudited, and no-dispute copy remains prominent.
 - [ ] Mainnet fee/principal exposure reviewed by two people; funding and run journals stored mode 0600.
 - [ ] Hosting privacy headers, canonical URL, robots, sitemap and deal-page noindex checked after a separate authorized deployment.
