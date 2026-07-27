@@ -231,7 +231,8 @@ export function DashboardClient({
             <PackageOpen aria-hidden="true" size={42} />
             <h3>Connect to inspect your deals</h3>
             <p>
-              Wallet addresses are used only for direct contract reads. There is
+              Connect the same wallet that created or funded the deal. Wallet
+              addresses are used only for direct contract reads, and there is
               no account database.
             </p>
           </div>
