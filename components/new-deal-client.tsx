@@ -227,7 +227,11 @@ export function NewDealClient({ network }: { network: Network }) {
               Add a short public clue for where the in-person exchange starts.
             </small>
           </div>
-          <fieldset className="field" style={{ border: 0, padding: 0 }}>
+          <fieldset
+            aria-describedby="buyer-access-hint"
+            className="field"
+            style={{ border: 0, padding: 0 }}
+          >
             <legend className="field-label">Buyer access</legend>
             <div className="choice-row">
               <div className="choice">
@@ -251,6 +255,10 @@ export function NewDealClient({ network }: { network: Network }) {
                 <label htmlFor="named">Named wallet only</label>
               </div>
             </div>
+            <small id="buyer-access-hint">
+              First valid buyer lets any wallet fund first. Named wallet only
+              limits funding and release to the exact buyer address below.
+            </small>
           </fieldset>
           {restricted && (
             <div className="field">
