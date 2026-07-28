@@ -4,7 +4,8 @@ import { PackageX } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Page not found",
-  description: "The requested Handoff page is unavailable. Check that the full link was copied, then open a dashboard or return home.",
+  description:
+    "The requested Handoff page is unavailable. Re-copy the full link, including the # fragment, or open a dashboard to import the portable deal sheet.",
   robots: {
     index: false,
     follow: false,
@@ -30,19 +31,20 @@ export default function NotFound() {
           sent with the page request.
         </p>
         <p>
-          Ask the sender to resend the full link. If it cannot be recovered,
-          ask for the portable <code>.handoff.json</code> deal sheet and import
-          it from one of the dashboards below instead.
+          Ask the sender to resend the full link without shortening it or
+          dropping the <code>#</code> fragment. If the original link cannot be
+          recovered, ask for the portable <code>.handoff.json</code> deal sheet
+          and import it from one of the dashboards below instead.
         </p>
         <div className="button-row">
           <Link className="button primary" href="/">
             Return to home page
           </Link>
           <Link className="button" href="/app/celo">
-            Open Celo dashboard to import
+            Open Celo import flow
           </Link>
           <Link className="button" href="/app/stacks">
-            Open Stacks dashboard to import
+            Open Stacks import flow
           </Link>
         </div>
       </section>
