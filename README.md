@@ -64,10 +64,11 @@ npm run test:e2e
 npm run test:a11y
 npm run verify
 npm run verify:full
-node --test .home/tests/*.test.mjs
 ```
 
 Direct token transfers to either escrow contract are unsupported and unrecoverable. Buyer release is irreversible: inspect the item first.
+
+The ignored `.home/` tree contains operator-only journals and QA tooling. If you maintain that local workflow, run its checks separately with `node --test .home/tests/*.test.mjs`; it is not part of the standard contributor verification path.
 
 ## Specifications
 
