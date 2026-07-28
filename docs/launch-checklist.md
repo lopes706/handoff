@@ -5,7 +5,7 @@
 - [ ] Official USDT and sBTC identifiers revalidated on deployment day.
 - [ ] Testnet bytecode/source, state transitions, exact expiry boundary, liability, and post-conditions verified.
 - [ ] MiniPay auto-access, standard Celo switching, Stacks connect/disconnect, rejection, and pending recovery tested on real devices.
-- [ ] Link/file/ticket round trips tested across devices without exposing fragments to metadata or logs.
+- [ ] Link/file/ticket round trips tested across devices without exposing fragments to metadata or logs, including 404 recovery and portable-import fallback after a dropped `#` fragment.
 - [ ] Desktop and mobile landing, dashboard, creation, deal, pass, scanner, refund, receipt, setup and 404 inspected.
 - [ ] PWA install surface, home-screen icon, and manifest shortcuts checked on supported mobile browsers.
 - [ ] Privacy, irreversible release, unsupported transfer, in-person-only, unaudited, and no-dispute copy remains prominent.
