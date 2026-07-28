@@ -32,17 +32,17 @@ export default function NotFound() {
         <p>
           Ask the sender to resend the full link. If it cannot be recovered,
           ask for the portable <code>.handoff.json</code> deal sheet and import
-          it from a dashboard instead.
+          it from one of the dashboards below instead.
         </p>
         <div className="button-row">
           <Link className="button primary" href="/">
             Return to home page
           </Link>
           <Link className="button" href="/app/celo">
-            Open Celo dashboard
+            Open Celo dashboard to import
           </Link>
           <Link className="button" href="/app/stacks">
-            Open Stacks dashboard
+            Open Stacks dashboard to import
           </Link>
         </div>
       </section>
