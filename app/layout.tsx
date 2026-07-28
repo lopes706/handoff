@@ -30,8 +30,14 @@ export const metadata: Metadata = {
     title: "Handoff",
   },
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
+    icon: [
+      { url: "/icon", type: "image/png", sizes: "512x512" },
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
+    ],
+    shortcut: [
+      { url: "/icon", type: "image/png", sizes: "512x512" },
+      { url: "/icon.svg", type: "image/svg+xml", sizes: "any" },
+    ],
     apple: "/apple-icon",
   },
   openGraph: {
