@@ -517,8 +517,8 @@ export function DealClient({ network, id }: { network: Network; id: string }) {
           {client.connected ? (
             <span className="wallet-chip">{shortAddress(client.account)}</span>
           ) : (
-            <button className="button" onClick={() => client.connect()}>
-              <Wallet aria-hidden="true" size={18} /> Connect wallet to continue
+            <button className="button" disabled={client.connecting} onClick={() => client.connect()}>
+              <Wallet aria-hidden="true" size={18} /> {client.connecting ? "Connecting…" : "Connect wallet to continue"}
             </button>
           )}
         </div>
