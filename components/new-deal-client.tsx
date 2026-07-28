@@ -123,8 +123,13 @@ export function NewDealClient({ network }: { network: Network }) {
         {client.connected ? (
           <span className="wallet-chip">Seller wallet connected</span>
         ) : (
-          <button className="button" onClick={() => client.connect()}>
-            <Wallet aria-hidden="true" size={18} /> Connect seller wallet
+          <button
+            className="button"
+            onClick={() => client.connect()}
+            disabled={client.connecting}
+          >
+            <Wallet aria-hidden="true" size={18} />{" "}
+            {client.connecting ? "Connecting…" : "Connect seller wallet"}
           </button>
         )}
       </div>
