@@ -16,10 +16,10 @@ describe("site header", () => {
       screen.getByRole("link", { name: /safety boundaries/i }),
     ).toHaveAttribute("href", "/#safety");
     expect(
-      screen.getByRole("link", { name: /open celo app/i }),
+      screen.getByRole("link", { name: /open celo dashboard/i }),
     ).toHaveAttribute("href", "/app/celo");
     expect(
-      screen.getByRole("link", { name: /open stacks app/i }),
+      screen.getByRole("link", { name: /open stacks dashboard/i }),
     ).toHaveAttribute("href", "/app/stacks");
   });
 });
