@@ -24,7 +24,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Open Celo dashboard",
         short_name: "Celo dashboard",
-        description: "View active Celo handoffs funded with USDT.",
+        description: "View recent Celo handoffs funded with USDT.",
         url: "/app/celo",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -35,7 +35,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Open Stacks dashboard",
         short_name: "Stacks dashboard",
-        description: "View active Stacks handoffs funded with sBTC.",
+        description: "View recent Stacks handoffs funded with sBTC.",
         url: "/app/stacks",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -46,7 +46,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "New Celo deal sheet",
         short_name: "New Celo",
-        description: "Start a new Celo handoff funded with USDT.",
+        description: "Start a new Celo deal sheet that can be funded with USDT.",
         url: "/app/celo/new",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -57,7 +57,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "New Stacks deal sheet",
         short_name: "New Stacks",
-        description: "Start a new Stacks handoff funded with sBTC.",
+        description: "Start a new Stacks deal sheet that can be funded with sBTC.",
         url: "/app/stacks/new",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
