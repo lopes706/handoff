@@ -40,9 +40,18 @@ local routes:
 
 - `http://localhost:3000/app` to enter the app and redirect to the default Celo dashboard
 - `http://localhost:3000/app/celo` for the Celo dashboard
+- `http://localhost:3000/app/celo?preview=1` for a clearly marked local Celo dashboard preview with sample deals
 - `http://localhost:3000/app/celo/new` to create a new Celo deal sheet
 - `http://localhost:3000/app/stacks` for the Stacks dashboard
+- `http://localhost:3000/app/stacks?preview=1` for a clearly marked local Stacks dashboard preview with sample deals
 - `http://localhost:3000/app/stacks/new` to create a new Stacks deal sheet
+
+Private deal previews use the same local page shell. Open
+`http://localhost:3000/d/celo/42?preview=funded` or
+`http://localhost:3000/d/stacks/42?preview=funded` to inspect a sample deal
+without a configured contract. Replace `funded` with `open`, `completed`,
+`refunded`, or `cancelled` to preview another state, and append `-buyer` or
+`-seller` to simulate buyer-facing or seller-facing actions.
 
 When testing or sharing a deal link locally, keep the full URL intact,
 including everything after `#`. That fragment carries the private deal sheet;
