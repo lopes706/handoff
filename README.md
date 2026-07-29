@@ -38,6 +38,7 @@ the same values.
 Open `http://localhost:3000` for the landing page, or jump straight to these
 local routes:
 
+- `http://localhost:3000/app` to enter the app and redirect to the default Celo dashboard
 - `http://localhost:3000/app/celo` for the Celo dashboard
 - `http://localhost:3000/app/celo/new` to create a new Celo deal sheet
 - `http://localhost:3000/app/stacks` for the Stacks dashboard
