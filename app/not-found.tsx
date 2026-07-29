@@ -41,10 +41,10 @@ export default function NotFound() {
             Return to home page
           </Link>
           <Link className="button" href="/app/celo">
-            Open Celo dashboard
+            Import on Celo dashboard
           </Link>
           <Link className="button" href="/app/stacks">
-            Open Stacks dashboard
+            Import on Stacks dashboard
           </Link>
         </div>
       </section>
