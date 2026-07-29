@@ -7,7 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     dir: "ltr",
     name: "Handoff",
     short_name: "Handoff",
-    description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock payment, inspect in person, then release.",
+    description:
+      "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
     start_url: "/app/celo",
     scope: "/app/",
     display: "standalone",
@@ -23,7 +24,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Open Celo dashboard",
         short_name: "Celo dashboard",
-        description: "Open the Celo dashboard.",
+        description: "View active Celo handoffs funded with USDT.",
         url: "/app/celo",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -34,7 +35,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Open Stacks dashboard",
         short_name: "Stacks dashboard",
-        description: "Open the Stacks dashboard.",
+        description: "View active Stacks handoffs funded with sBTC.",
         url: "/app/stacks",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
