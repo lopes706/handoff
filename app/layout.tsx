@@ -7,8 +7,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(publicEnv.appUrl),
-  title: { default: "Handoff — inspect, exchange, release", template: "%s · Handoff" },
-  description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
+  title: { default: "Handoff — lock payment, inspect first", template: "%s · Handoff" },
+  description:
+    "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
   formatDetection: {
     telephone: false,
     date: false,
@@ -41,8 +42,9 @@ export const metadata: Metadata = {
     apple: "/apple-icon",
   },
   openGraph: {
-    title: "Handoff — inspect, exchange, release",
-    description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
+    title: "Handoff — lock payment, inspect first",
+    description:
+      "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
     type: "website",
     locale: "en_US",
     url: "/",
@@ -51,8 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Handoff — inspect, exchange, release",
-    description: "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks.",
+    title: "Handoff — lock payment, inspect first",
+    description:
+      "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
     images: [{ url: "/opengraph-image", alt: "Handoff preview card" }]
   },
   other: publicEnv.talentVerification
