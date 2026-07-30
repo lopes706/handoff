@@ -49,14 +49,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Handoff",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Handoff preview card" }]
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Handoff — lock payment, inspect first, then hand off" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Handoff — lock payment, inspect first",
     description:
       "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
-    images: [{ url: "/opengraph-image", alt: "Handoff preview card" }]
+    images: [{ url: "/opengraph-image", alt: "Handoff — lock payment, inspect first, then hand off" }]
   },
   other: publicEnv.talentVerification
     ? { "talentapp:project_verification": publicEnv.talentVerification }

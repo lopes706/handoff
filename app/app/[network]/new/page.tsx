@@ -23,13 +23,13 @@ export async function generateMetadata({ params }: { params: Promise<{ network: 
       type: "website",
       url,
       siteName: "Handoff",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Handoff preview card" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Handoff — lock payment, inspect first, then hand off" }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [{ url: "/opengraph-image", alt: "Handoff preview card" }],
+      images: [{ url: "/opengraph-image", alt: "Handoff — lock payment, inspect first, then hand off" }],
     },
   };
 }
