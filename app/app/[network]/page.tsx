@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ network: 
   const { network } = await params;
   if (!isNetwork(network)) return { title: "Open dashboard" };
   const label = networkLabel(network);
-  const title = `${label} deals`;
+  const title = `${label} dashboard`;
   const description = `Inspect active, refunded, and expired Handoff deals on ${label} with the wallet that created or funded them.`;
   const url = `/app/${network}`;
   return {
