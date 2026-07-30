@@ -24,7 +24,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Open Celo dashboard",
         short_name: "Celo dashboard",
-        description: "View recent Celo handoffs funded with USDT.",
+        description: "Inspect active, refunded, and expired Celo Handoff deals funded with USDT.",
         url: "/app/celo",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -35,7 +35,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Open Stacks dashboard",
         short_name: "Stacks dashboard",
-        description: "View recent Stacks handoffs funded with sBTC.",
+        description: "Inspect active, refunded, and expired Stacks Handoff deals funded with sBTC.",
         url: "/app/stacks",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
