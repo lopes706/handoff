@@ -61,6 +61,9 @@ Verified mainnet identifiers are built-in defaults; environment values can overr
 
 ## Verification
 
+For the standard local gate, run `npm run verify`. Use `npm run verify:full`
+only when you also need the Playwright end-to-end pass.
+
 ```bash
 npm run lint
 npm run typecheck
