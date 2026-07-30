@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PackageX } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Page not found",
+  title: "Handoff page not found",
   description:
     "The requested Handoff page is unavailable. Re-copy the full link, including the # fragment, or open a dashboard to import the portable deal sheet.",
   robots: {
@@ -15,11 +15,15 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <main className="invalid-page" id="main-content" tabIndex={-1}>
-      <section className="invalid-card">
+      <section
+        className="invalid-card"
+        aria-labelledby="not-found-title"
+        aria-describedby="not-found-summary"
+      >
         <PackageX aria-hidden="true" size={42} />
         <span className="eyebrow">Page not found · 404</span>
-        <h1>This Handoff page could not be found.</h1>
-        <p>
+        <h1 id="not-found-title">This Handoff page could not be found.</h1>
+        <p id="not-found-summary">
           This link does not open a valid Handoff screen. The most common cause
           is a shortened or partially copied URL.
         </p>
