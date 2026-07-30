@@ -9,12 +9,12 @@ export async function generateMetadata({
 }: {
   params: Promise<{ network: string; id: string }>;
 }): Promise<Metadata> {
-  const { network } = await params;
+  const { network, id } = await params;
   const description =
     "Open an unlisted Handoff deal sheet for an in-person exchange. Private terms stay in the URL fragment or portable file and are never indexed.";
   return {
     title: isNetwork(network)
-      ? `${networkLabel(network)} private deal`
+      ? `${networkLabel(network)} private deal #${id}`
       : "Private deal",
     description,
     robots: { index: false, follow: false },
