@@ -56,7 +56,8 @@ seller-facing actions enabled.
 
 When testing or sharing a deal link locally, keep the full URL intact,
 including everything after `#`. That fragment carries the private deal sheet;
-dropping it opens the page without the attached terms.
+link shorteners, preview wrappers, and partial manual copy/paste can strip it,
+which opens the page without the attached terms.
 
 Verified mainnet identifiers are built-in defaults; environment values can override them for another reviewed deployment. Testnet contract addresses remain required. See [deployment.md](docs/deployment.md) for every variable and the testnet-first workflow.
 
