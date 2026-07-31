@@ -22,11 +22,30 @@ export async function generateMetadata({
   }
   const description =
     "Open an unlisted Handoff deal sheet for an in-person exchange. Private terms stay in the URL fragment or portable file and are never indexed.";
+  const title = `${networkLabel(network)} private deal #${id}`;
+  const url = `/d/${network}/${id}`;
   return {
-    title: `${networkLabel(network)} private deal #${id}`,
+    title,
     description,
+    alternates: {
+      canonical: url,
+    },
     robots: { index: false, follow: false },
     referrer: "no-referrer",
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url,
+      siteName: "Handoff",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Handoff — lock payment, inspect first, then hand off" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [{ url: "/opengraph-image", alt: "Handoff — lock payment, inspect first, then hand off" }],
+    },
   };
 }
 
