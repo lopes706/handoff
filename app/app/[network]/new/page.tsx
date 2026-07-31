@@ -6,7 +6,7 @@ import { isNetwork, networkLabel } from "@/lib/format";
 
 export async function generateMetadata({ params }: { params: Promise<{ network: string }> }): Promise<Metadata> {
   const { network } = await params;
-  if (!isNetwork(network)) return { title: "Create deal sheet" };
+  if (!isNetwork(network)) return { title: "Deal sheet not found" };
   const label = networkLabel(network);
   const title = `Create ${label} deal sheet`;
   const description = `Prepare an unlisted private ${label} deal sheet for an in-person exchange before sharing it with the buyer.`;
