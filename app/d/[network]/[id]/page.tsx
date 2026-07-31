@@ -10,12 +10,20 @@ export async function generateMetadata({
   params: Promise<{ network: string; id: string }>;
 }): Promise<Metadata> {
   const { network, id } = await params;
+  const isValidId = /^\d+$/.test(id) && BigInt(id) !== 0n;
+  if (!isNetwork(network) || !isValidId) {
+    return {
+      title: "Private deal not found",
+      description:
+        "The requested Handoff private deal is unavailable. Re-copy the full link, including the # fragment, or import the portable deal sheet from a dashboard.",
+      robots: { index: false, follow: false },
+      referrer: "no-referrer",
+    };
+  }
   const description =
     "Open an unlisted Handoff deal sheet for an in-person exchange. Private terms stay in the URL fragment or portable file and are never indexed.";
   return {
-    title: isNetwork(network)
-      ? `${networkLabel(network)} private deal #${id}`
-      : "Private deal",
+    title: `${networkLabel(network)} private deal #${id}`,
     description,
     robots: { index: false, follow: false },
     referrer: "no-referrer",
