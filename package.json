@@ -1,7 +1,7 @@
 {
   "name": "handoff",
   "version": "0.1.0",
-  "description": "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock payment, inspect in person, then release.",
+  "description": "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
   "private": true,
   "type": "module",
   "engines": {
