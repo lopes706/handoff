@@ -46,7 +46,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "New Celo deal sheet",
         short_name: "New Celo",
-        description: "Start a new Celo deal sheet that can be funded with USDT.",
+        description: "Start a private Celo deal sheet to share with a buyer and fund with USDT.",
         url: "/app/celo/new",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -57,7 +57,7 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "New Stacks deal sheet",
         short_name: "New Stacks",
-        description: "Start a new Stacks deal sheet that can be funded with sBTC.",
+        description: "Start a private Stacks deal sheet to share with a buyer and fund with sBTC.",
         url: "/app/stacks/new",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
