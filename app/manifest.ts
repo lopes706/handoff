@@ -24,7 +24,8 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Open Celo dashboard",
         short_name: "Celo dashboard",
-        description: "Inspect active, refunded, and expired Celo Handoff deals funded with USDT.",
+        description:
+          "Open the Celo dashboard to inspect open, funded, completed, refunded, and expired USDT handoffs.",
         url: "/app/celo",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -35,7 +36,8 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "Open Stacks dashboard",
         short_name: "Stacks dashboard",
-        description: "Inspect active, refunded, and expired Stacks Handoff deals funded with sBTC.",
+        description:
+          "Open the Stacks dashboard to inspect open, funded, completed, refunded, and expired sBTC handoffs.",
         url: "/app/stacks",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -46,7 +48,8 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "New Celo deal sheet",
         short_name: "New Celo",
-        description: "Start a private Celo deal sheet to share with a buyer and fund with USDT.",
+        description:
+          "Open the Celo deal sheet builder to prepare a private buyer handoff funded with USDT.",
         url: "/app/celo/new",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
@@ -57,7 +60,8 @@ export default function manifest(): MetadataRoute.Manifest {
       {
         name: "New Stacks deal sheet",
         short_name: "New Stacks",
-        description: "Start a private Stacks deal sheet to share with a buyer and fund with sBTC.",
+        description:
+          "Open the Stacks deal sheet builder to prepare a private buyer handoff funded with sBTC.",
         url: "/app/stacks/new",
         icons: [
           { src: "/icon", sizes: "512x512", type: "image/png" },
