@@ -23,7 +23,7 @@ export function Brand({
   return (
     <Link
       aria-current={current ? "page" : undefined}
-      aria-label={current ? "Handoff home, current page" : "Handoff home"}
+      aria-label="Handoff home"
       className="brand"
       href="/"
     >
