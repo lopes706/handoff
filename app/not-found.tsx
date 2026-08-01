@@ -30,7 +30,7 @@ export default function NotFound() {
         <p>
           When a private deal sheet is attached, the part after the{" "}
           <code>#</code> symbol must stay intact. Some chat apps and manual
-          copy steps drop that fragment. Link shorteners and preview wrappers
+          copy actions drop that fragment. Link shorteners and preview wrappers
           can do the same, which breaks the attached deal sheet. The private
           deal sheet lives only in the link itself and is never sent with the
           page request.
