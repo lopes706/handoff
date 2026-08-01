@@ -47,7 +47,6 @@ export const metadata: Metadata = {
       "Buyer-controlled escrow for local in-person exchanges on Celo and Stacks. Lock USDT or sBTC, inspect the item first, then release without accounts or a middleman.",
     type: "website",
     locale: "en_US",
-    url: "/",
     siteName: "Handoff",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Handoff — lock payment, inspect first, then hand off" }]
   },
