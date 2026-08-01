@@ -39,7 +39,9 @@ export default function NotFound() {
           Ask the sender to resend the full link without shortening it or
           dropping the <code>#</code> fragment. If the original link cannot be
           recovered, ask for the portable <code>.handoff.json</code> deal sheet
-          and import it from one of the dashboards below instead.
+          and import it from one of the dashboards below instead. Anyone who
+          receives that file can read it, so treat it with the same care as the
+          original deal link.
         </p>
         <div className="button-row">
           <Link className="button primary" href="/">
