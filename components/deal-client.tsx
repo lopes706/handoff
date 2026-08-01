@@ -71,10 +71,13 @@ const previewTerms = {
 function previewDeal(network: Network, id: bigint, phase: string): HandoffDeal {
   const now = Math.floor(Date.now() / 1000);
   const status = (
-    ["open", "funded", "completed", "refunded", "cancelled"].includes(phase)
-      ? phase
-      : "funded"
+    phase === "expired"
+      ? "funded"
+      : ["open", "funded", "completed", "refunded", "cancelled"].includes(phase)
+        ? phase
+        : "funded"
   ) as HandoffDeal["status"];
+  const isExpiredPreview = phase === "expired";
   return {
     id,
     network,
@@ -92,7 +95,7 @@ function previewDeal(network: Network, id: bigint, phase: string): HandoffDeal {
     releaseCommitment: `0x${"bb".repeat(32)}`,
     amount: network === "celo" ? 18_500_000n : 42_000n,
     createdAt: now - 900,
-    expiresAt: now + 7200,
+    expiresAt: isExpiredPreview ? now - 300 : now + 7200,
     fundedAt: status === "open" ? null : now - 600,
     resolvedAt: ["completed", "refunded", "cancelled"].includes(status)
       ? now - 60

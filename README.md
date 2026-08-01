@@ -50,7 +50,7 @@ Private deal previews use the same local page shell. Open
 `http://localhost:3000/d/celo/42?preview=funded` or
 `http://localhost:3000/d/stacks/42?preview=funded` to inspect a sample deal
 without a configured contract. Replace `funded` with `open`, `completed`,
-`refunded`, or `cancelled` to preview another state. Use `funded-buyer` or
+`refunded`, `cancelled`, or `expired` to preview another state. Use `funded-buyer` or
 `funded-seller` when you need the funded view with buyer-facing or
 seller-facing actions enabled.
 
