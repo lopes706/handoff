@@ -74,7 +74,7 @@ export function LandingDemo() {
           role="tablist"
         >
           {steps.map((item, index) => {
-            const stepState = index < active ? "Completed" : index === active ? "Current stop" : "Upcoming";
+            const stepState = index < active ? "Completed" : index === active ? "Current step" : "Upcoming";
 
             return (
               <button
@@ -121,8 +121,8 @@ export function LandingDemo() {
           })}
         </div>
         <p className="fineprint" style={{ margin: "12px 0 0" }}>
-          Keyboard tip: use Left and Right Arrow to move between stops, or Home
-          and End to jump to the first or last stop.
+          Keyboard tip: use Left and Right Arrow to move between steps, or use
+          Home and End for the endpoints.
         </p>
       </div>
     </div>
