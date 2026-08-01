@@ -38,7 +38,7 @@ export function LandingDemo() {
             <span className="eyebrow" aria-hidden="true">Local preview · not live</span>
             <h3 id={previewTitleId} style={{ margin: "5px 0 0" }}>Deal #0042</h3>
           </div>
-          <span aria-live="polite" className="status-tape">
+          <span aria-atomic="true" className="status-tape" role="status">
             <span className="sr-only">Deal status: </span>
             {statusLabel}
           </span>
@@ -74,7 +74,7 @@ export function LandingDemo() {
           role="tablist"
         >
           {steps.map((item, index) => {
-            const stepState = index < active ? "Complete" : index === active ? "Current stop" : "Waiting";
+            const stepState = index < active ? "Completed" : index === active ? "Current stop" : "Upcoming";
 
             return (
               <button
