@@ -42,6 +42,13 @@ describe("landing page", () => {
         .find((link) => link.getAttribute("href") === "#safety"),
     ).toBeDefined();
   });
+
+  it("describes the onchain fingerprint without an ambiguous owner", () => {
+    render(<Home />);
+    expect(
+      screen.getByText(/only the sha-256 fingerprint goes onchain/i),
+    ).toBeInTheDocument();
+  });
 });
 
 describe("not found page", () => {
