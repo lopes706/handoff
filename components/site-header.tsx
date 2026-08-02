@@ -7,10 +7,10 @@ export function SiteHeader() {
       <Brand current />
       <nav aria-label="Primary navigation">
         <Link className="site-nav-link" href="/#how">
-          How Handoff works
+          Jump to how Handoff works
         </Link>
         <Link className="site-nav-link" href="/#safety">
-          Safety boundaries
+          Jump to safety boundaries
         </Link>
         <Link className="site-nav-link" href="/app/celo">
           Open Celo dashboard
