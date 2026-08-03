@@ -181,6 +181,7 @@ h3 {
 }
 .hero h1 {
   margin: 14px 0 26px;
+  text-wrap: balance;
 }
 .hero h1 span {
   color: var(--blue);
@@ -361,6 +362,9 @@ h3 {
 }
 .section-head p {
   max-width: 470px;
+}
+.section-head h2 {
+  text-wrap: balance;
 }
 .steps-grid,
 .network-grid,
