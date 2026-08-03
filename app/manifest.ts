@@ -47,7 +47,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
       {
         name: "New Celo deal sheet",
-        short_name: "New Celo",
+        short_name: "New Celo deal",
         description:
           "Open the Celo deal sheet builder to prepare a private buyer handoff funded with USDT.",
         url: "/app/celo/new",
@@ -59,7 +59,7 @@ export default function manifest(): MetadataRoute.Manifest {
       },
       {
         name: "New Stacks deal sheet",
-        short_name: "New Stacks",
+        short_name: "New Stacks deal",
         description:
           "Open the Stacks deal sheet builder to prepare a private buyer handoff funded with sBTC.",
         url: "/app/stacks/new",
